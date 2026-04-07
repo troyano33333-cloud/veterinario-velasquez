@@ -82,9 +82,18 @@ body {
   .service-card--banner { flex-direction: column; align-items: flex-start; padding: 32px 28px; }
   .service-card--banner .sc-footer { margin-left: 0; align-self: flex-start; flex-direction: row; }
 
-  /* sc2 → 2 columnas */
+  /* sc2 → 2 columnas, overlay siempre visible */
   .sc2-grid { grid-template-columns: 1fr 1fr; }
-  .sc2-card--wide { grid-column: span 2; }
+  .sc2-card--wide { grid-column: span 2; flex-direction: column; align-items: center; padding-bottom: 0; }
+  .sc2-card--wide .sc2-emoji { margin: 20px 0 0; width: auto; }
+  .sc2-card--wide .sc2-overlay {
+    position: relative; height: auto !important;
+    border-radius: 0 0 28px 28px; border-top: 2px solid rgba(255,140,66,0.3); border-left: none;
+    flex: none; width: 100%; box-sizing: border-box; margin: 10px 0 0;
+  }
+  .sc2-card--wide .sc2-title { text-align: center; }
+  .sc2-card--wide .sc2-desc  { opacity: 1; transform: none; text-align: center; }
+  .sc2-card--wide .sc2-footer{ opacity: 1; transform: none; flex-direction: row; justify-content: center; gap: 12px; flex-wrap: wrap; }
   .sc2-card--banner { flex-direction: column; align-items: flex-start; }
   .sc2-card--banner .sc2-emoji { margin-left: 26px; margin-top: 28px; margin-bottom: 0; }
   .sc2-card--banner .sc2-overlay { border-radius: 0 0 28px 28px; }
@@ -190,17 +199,85 @@ body {
   .service-card--banner { flex-direction: column; align-items: flex-start; padding: 28px 22px; }
   .service-card--banner .sc-footer { margin-left: 0; flex-direction: row; align-self: flex-start; }
 
-  /* sc2 → 1 columna */
-  .sc2-grid { grid-template-columns: 1fr; display: flex; flex-direction: column; width: 100%; box-sizing: border-box; gap: 20px; }
-  .sc2-card { width: 100%; box-sizing: border-box; }
-  .sc2-card--wide { grid-column: span 1; flex-direction: column; align-items: center; }
-  .sc2-card--wide .sc2-emoji { margin: 28px 0 0; }
-  .sc2-card--wide .sc2-overlay { border-radius: 0 0 28px 28px; flex: none; width: 100%; box-sizing: border-box; }
-  .sc2-card--banner .sc2-emoji { font-size: 5rem; margin-left: 0; }
-  .sc2-card--banner .sc2-overlay { border-radius: 0 0 28px 28px; width: 100%; box-sizing: border-box; }
+  /* sc2 → 1 columna, todo visible sin hover */
+  .sc2-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 16px;
+  }
+  /* Todas las tarjetas: fila emoji arriba + overlay abajo */
+  .sc2-card,
+  .sc2-card--wide,
+  .sc2-card--banner {
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    padding-bottom: 0;
+    grid-column: span 1 !important;
+  }
+  /* Emoji siempre arriba, padding para que no quede pegado */
+  .sc2-card .sc2-emoji,
+  .sc2-card--wide .sc2-emoji,
+  .sc2-card--banner .sc2-emoji {
+    font-size: 4.5rem;
+    margin: 24px 0 0;
+    width: auto;
+    align-self: center;
+    flex-shrink: 0;
+  }
+  /* Overlay siempre expandido: posición relativa, altura automática */
+  .sc2-overlay,
+  .sc2-card--wide .sc2-overlay,
+  .sc2-card--banner .sc2-overlay {
+    position: relative !important;
+    height: auto !important;
+    width: 100%;
+    border-radius: 0 0 28px 28px !important;
+    border-top: 2px solid rgba(255,140,66,0.30) !important;
+    border-left: none !important;
+    flex: none;
+    align-self: stretch;
+    box-sizing: border-box;
+    padding: 18px 18px 22px;
+    overflow: visible;
+    margin: 12px 0 0;
+  }
+  /* Título, desc y footer siempre visibles */
+  .sc2-title {
+    text-align: center !important;
+    font-size: 1rem;
+  }
+  .sc2-desc {
+    opacity: 1 !important;
+    transform: none !important;
+    text-align: center;
+    font-size: 0.83rem;
+    margin-bottom: 14px;
+  }
+  .sc2-footer {
+    opacity: 1 !important;
+    transform: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+  .sc2-price {
+    font-size: 0.82rem;
+  }
+  .sc2-btn {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+  }
   .sc2-chips { flex-direction: column; gap: 8px; width: 100%; }
-  .sc2-footer { flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; align-items: center; }
-  .sc2-btn, .btn-more { width: 100%; justify-content: center; box-sizing: border-box; text-align: center; }
+  .btn-more { width: 100%; justify-content: center; box-sizing: border-box; text-align: center; }
 
   /* ── Casos ── */
   .cases-grid { grid-template-columns: 1fr; display: flex; flex-direction: column; width: 100%; box-sizing: border-box; gap: 20px; }
