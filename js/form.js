@@ -2,6 +2,7 @@
  * form.js — Formulario de contacto → WhatsApp
  * Al hacer submit construye un mensaje y abre WhatsApp directamente.
  */
+import { waUrl } from './config.js';
 
 export function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -30,7 +31,6 @@ export function initContactForm() {
       `*Tipo de atención:* ${urgencia}`,
     ];
 
-    const waURL = `https://wa.me/573002104847?text=${encodeURIComponent(lines.join('\n'))}`;
-    window.open(waURL, '_blank', 'noopener,noreferrer');
+    window.open(waUrl(lines.join('\n')), '_blank', 'noopener,noreferrer');
   });
 }

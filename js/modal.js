@@ -3,6 +3,7 @@
  * Un único modal reutilizable que se rellena dinámicamente.
  * Los botones usan data-service="id" para activar el modal correcto.
  */
+import { DOCTOR_NAME, waUrl } from './config.js';
 
 const SERVICIOS = {
   vacunacion: {
@@ -124,8 +125,8 @@ function openModal(id) {
   const lista = document.getElementById('modalList');
   lista.innerHTML = s.puntos.map(p => `<li>${p}</li>`).join('');
 
-  const waText = `Hola Dr. Germán! Me interesa el servicio de ${s.titulo}. ¿Podemos coordinar una visita?`;
-  document.getElementById('modalWa').href = `https://wa.me/573002104847?text=${encodeURIComponent(waText)}`;
+  const waText = `Hola ${DOCTOR_NAME}! Me interesa el servicio de ${s.titulo}. ¿Podemos coordinar una visita?`;
+  document.getElementById('modalWa').href = waUrl(waText);
 
   const header = document.getElementById('modalHeader');
   header.style.background = `linear-gradient(135deg, ${s.color}, ${s.color}cc)`;

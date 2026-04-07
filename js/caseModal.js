@@ -1,6 +1,7 @@
 /**
  * caseModal.js — Modal de casos de éxito
  */
+import { DOCTOR_NAME, waUrl } from './config.js';
 
 const CASOS = {
   cooper: {
@@ -51,8 +52,6 @@ const CASOS = {
     ],
   },
 };
-
-const WA_NUMBER = '573002104847';
 
 export function initCaseModal() {
   const overlay   = document.getElementById('caseModalOverlay');
@@ -113,8 +112,7 @@ export function initCaseModal() {
       `<div class="case-modal-fact"><i class="${h.icon}"></i><span>${h.texto}</span></div>`
     ).join('');
 
-    const msg = encodeURIComponent(`Hola Dr. Germán, vi el caso de ${c.nombre.replace(/[^\w\s,]/g,'')} en su página y me gustaría agendar una consulta para mi mascota.`);
-    wa.href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
+    wa.href = waUrl(`Hola ${DOCTOR_NAME}, vi el caso de ${c.nombre.replace(/[^\w\s,]/g,'')} en su página y me gustaría agendar una consulta para mi mascota.`);
 
     if (c.video && c.img) {
       // Foto + video: dos slides
