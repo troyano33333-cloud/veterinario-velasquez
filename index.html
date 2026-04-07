@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Germán Velásquez | Médico Internista Veterinario - Medellín</title>
+  <link rel="icon" type="image/png" href="assets/images/VETERINARIOO.png" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== PAWS FLOATING PARTICLES ========== -->
+  <div class="paws-container" id="pawsContainer"></div>
+
+  <!-- ========== WHATSAPP FLOATING BUTTON ========== -->
+  <a href="https://wa.me/573104668704" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">¡Escríbeme!</span>
+  </a>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="logo-icon">
+          <img src="assets/images/veterinario.png" alt="Dr. Velásquez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Dr. Velásquez</span>
+          <span class="logo-sub">Internista Veterinario</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#galeria" class="nav-link">Casos Reales</a></li>
+        <li><a href="#cobertura" class="nav-link">Cobertura</a></li>
+        <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+        <li><a href="#contacto" class="nav-link nav-cta">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg-shapes">
+      <img class="jungle-bg-img" src="assets/images/fondo_principal.png" alt="" aria-hidden="true" />
+      <svg class="jungle-bg-svg" style="display:none" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="jSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#B8DEFF"/>
+            <stop offset="45%" stop-color="#FFE8CC"/>
+            <stop offset="100%" stop-color="#C8EEC0"/>
+          </linearGradient>
+          <radialGradient id="jSun" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFF8A0"/>
+            <stop offset="100%" stop-color="#FFD040"/>
+          </radialGradient>
+        </defs>
+
+        <!-- SKY -->
+        <rect width="1440" height="700" fill="url(#jSky)"/>
+
+        <!-- SUN glow + body -->
+        <circle cx="1285" cy="108" r="88" fill="#FFE880" opacity="0.22"/>
+        <circle cx="1285" cy="108" r="54" fill="url(#jSun)"/>
+        <ellipse cx="1270" cy="93" rx="18" ry="12" fill="white" opacity="0.3"/>
+        <!-- rays -->
+        <g stroke="#FFC800" stroke-width="3" stroke-linecap="round" opacity="0.5">
+          <line x1="1285" y1="44"  x2="1285" y2="26"/>
+          <line x1="1285" y1="172" x2="1285" y2="192"/>
+          <line x1="1221" y1="108" x2="1201" y2="108"/>
+          <line x1="1349" y1="108" x2="1369" y2="108"/>
+          <line x1="1240" y1="63"  x2="1226" y2="49"/>
+          <line x1="1330" y1="153" x2="1344" y2="167"/>
+          <line x1="1330" y1="63"  x2="1344" y2="49"/>
+          <line x1="1240" y1="153" x2="1226" y2="167"/>
+        </g>
+
+        <!-- CLOUD 1 (left) -->
+        <g opacity="0.93">
+          <ellipse cx="172" cy="148" rx="80" ry="42" fill="white"/>
+          <ellipse cx="108" cy="168" rx="52" ry="40" fill="white"/>
+          <ellipse cx="232" cy="168" rx="56" ry="35" fill="white"/>
+          <ellipse cx="172" cy="184" rx="74" ry="11" fill="#CCDDE8" opacity="0.35"/>
+        </g>
+        <!-- CLOUD 2 (center) -->
+        <g opacity="0.88">
+          <ellipse cx="775" cy="92" rx="94" ry="46" fill="white"/>
+          <ellipse cx="694" cy="116" rx="58" ry="40" fill="white"/>
+          <ellipse cx="858" cy="116" rx="64" ry="36" fill="white"/>
+        </g>
+        <!-- CLOUD 3 (small) -->
+        <g opacity="0.76">
+          <ellipse cx="478" cy="112" rx="60" ry="31" fill="white"/>
+          <ellipse cx="428" cy="132" rx="38" ry="26" fill="white"/>
+          <ellipse cx="528" cy="132" rx="42" ry="23" fill="white"/>
+        </g>
+
+        <!-- HILLS back -->
+        <path d="M0 530 Q185 438 365 496 Q545 554 725 462 Q905 378 1105 458 Q1285 538 1440 468 L1440 700 L0 700Z" fill="#90CC7C" opacity="0.52"/>
+        <!-- HILLS mid -->
+        <path d="M0 578 Q245 502 462 548 Q678 594 882 530 Q1062 472 1282 536 Q1392 566 1440 548 L1440 700 L0 700Z" fill="#6CBF55" opacity="0.78"/>
+        <!-- GROUND front -->
+        <path d="M0 626 Q362 590 722 618 Q1082 646 1440 600 L1440 700 L0 700Z" fill="#50B840"/>
+        <!-- ground glow line -->
+        <path d="M0 628 Q362 593 722 620 Q1082 648 1440 602" stroke="#72D262" stroke-width="3" fill="none" opacity="0.6"/>
+
+        <!-- ===== LEFT PALM TREE ===== -->
+        <!-- trunk -->
+        <path d="M108 700 Q93 590 107 490 Q117 414 99 338" stroke="#7A5230" stroke-width="28" stroke-linecap="round" fill="none"/>
+        <path d="M108 700 Q93 590 107 490 Q117 414 99 338" stroke="#9B6A40" stroke-width="18" stroke-linecap="round" fill="none"/>
+        <path d="M102 628 Q120 618 102 596" stroke="#6A4225" stroke-width="3" fill="none" opacity="0.5"/>
+        <path d="M105 558 Q122 547 105 524" stroke="#6A4225" stroke-width="3" fill="none" opacity="0.5"/>
+        <path d="M103 488 Q120 478 103 456" stroke="#6A4225" stroke-width="3" fill="none" opacity="0.5"/>
+        <!-- leaves -->
+        <path d="M99 338 Q20 268 -32 212"  stroke="#236E20" stroke-width="22" stroke-linecap="round" fill="none"/>
+        <path d="M99 338 Q54 238 76 168"   stroke="#27A022" stroke-width="18" stroke-linecap="round" fill="none"/>
+        <path d="M99 338 Q162 252 218 212" stroke="#236E20" stroke-width="22" stroke-linecap="round" fill="none"/>
+        <path d="M99 338 Q178 293 228 278" stroke="#27A022" stroke-width="16" stroke-linecap="round" fill="none"/>
+        <path d="M99 338 Q125 258 110 192" stroke="#2A9C26" stroke-width="16" stroke-linecap="round" fill="none"/>
+        <!-- midribs -->
+        <path d="M99 338 Q20 268 -32 212"  stroke="#44C038" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M99 338 Q162 252 218 212" stroke="#44C038" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M99 338 Q54 238 76 168"   stroke="#44C038" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <!-- coconuts -->
+        <ellipse cx="105" cy="348" rx="13" ry="11" fill="#C89835"/>
+        <ellipse cx="87"  cy="358" rx="11" ry="10" fill="#B08028"/>
+        <ellipse cx="119" cy="356" rx="10" ry="9"  fill="#C89835"/>
+
+        <!-- LEFT foliage -->
+        <path d="M0 458 Q52 386 12 312" stroke="#238B22" stroke-width="24" stroke-linecap="round" fill="none"/>
+        <path d="M0 494 Q66 452 52 396"  stroke="#2DAA2A" stroke-width="19" stroke-linecap="round" fill="none"/>
+        <path d="M0 534 Q56 514 66 472"  stroke="#38BB35" stroke-width="17" stroke-linecap="round" fill="none"/>
+        <path d="M0 458 Q52 386 12 312" stroke="#4ACC40" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M0 494 Q66 452 52 396"  stroke="#4ACC40" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+        <!-- LEFT bush + flowers -->
+        <ellipse cx="52"  cy="668" rx="80" ry="48" fill="#46AA42"/>
+        <ellipse cx="142" cy="662" rx="64" ry="44" fill="#52BA4C"/>
+        <!-- orange flower -->
+        <circle cx="22"  cy="622" r="8" fill="#FF8C42" opacity="0.72"/><circle cx="40"  cy="617" r="8" fill="#FF8C42" opacity="0.72"/>
+        <circle cx="32"  cy="611" r="8" fill="#FF8C42" opacity="0.72"/><circle cx="56"  cy="618" r="8" fill="#FF8C42" opacity="0.72"/>
+        <circle cx="38"  cy="624" r="10" fill="#FF8C42"/><circle cx="38" cy="624" r="5" fill="#FFE048"/>
+        <!-- pink flower -->
+        <circle cx="90"  cy="614" r="8" fill="#FF69AB" opacity="0.72"/><circle cx="108" cy="608" r="8" fill="#FF69AB" opacity="0.72"/>
+        <circle cx="99"  cy="603" r="8" fill="#FF69AB" opacity="0.72"/><circle cx="115" cy="614" r="8" fill="#FF69AB" opacity="0.72"/>
+        <circle cx="101" cy="619" r="10" fill="#FF69AB"/><circle cx="101" cy="619" r="5" fill="#FFE048"/>
+        <!-- purple flower -->
+        <circle cx="150" cy="620" r="7" fill="#A855DE" opacity="0.72"/><circle cx="164" cy="615" r="7" fill="#A855DE" opacity="0.72"/>
+        <circle cx="157" cy="610" r="7" fill="#A855DE" opacity="0.72"/>
+        <circle cx="157" cy="622" r="9" fill="#A855DE"/><circle cx="157" cy="622" r="4.5" fill="#FFE048"/>
+
+        <!-- ===== RIGHT PALM TREE ===== -->
+        <path d="M1332 700 Q1347 590 1333 490 Q1323 414 1343 338" stroke="#7A5230" stroke-width="28" stroke-linecap="round" fill="none"/>
+        <path d="M1332 700 Q1347 590 1333 490 Q1323 414 1343 338" stroke="#9B6A40" stroke-width="18" stroke-linecap="round" fill="none"/>
+        <path d="M1338 628 Q1320 618 1338 596" stroke="#6A4225" stroke-width="3" fill="none" opacity="0.5"/>
+        <path d="M1335 558 Q1318 547 1335 524" stroke="#6A4225" stroke-width="3" fill="none" opacity="0.5"/>
+        <path d="M1337 488 Q1320 478 1337 456" stroke="#6A4225" stroke-width="3" fill="none" opacity="0.5"/>
+        <!-- leaves -->
+        <path d="M1343 338 Q1422 268 1474 212" stroke="#236E20" stroke-width="22" stroke-linecap="round" fill="none"/>
+        <path d="M1343 338 Q1388 238 1366 168" stroke="#27A022" stroke-width="18" stroke-linecap="round" fill="none"/>
+        <path d="M1343 338 Q1280 252 1224 212" stroke="#236E20" stroke-width="22" stroke-linecap="round" fill="none"/>
+        <path d="M1343 338 Q1264 293 1214 278" stroke="#27A022" stroke-width="16" stroke-linecap="round" fill="none"/>
+        <path d="M1343 338 Q1318 258 1332 192" stroke="#2A9C26" stroke-width="16" stroke-linecap="round" fill="none"/>
+        <!-- midribs -->
+        <path d="M1343 338 Q1422 268 1474 212" stroke="#44C038" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M1343 338 Q1280 252 1224 212" stroke="#44C038" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <!-- coconuts -->
+        <ellipse cx="1337" cy="348" rx="13" ry="11" fill="#C89835"/>
+        <ellipse cx="1353" cy="358" rx="11" ry="10" fill="#B08028"/>
+        <ellipse cx="1323" cy="356" rx="10" ry="9"  fill="#C89835"/>
+
+        <!-- RIGHT foliage -->
+        <path d="M1440 458 Q1388 386 1428 312" stroke="#238B22" stroke-width="24" stroke-linecap="round" fill="none"/>
+        <path d="M1440 494 Q1374 452 1388 396" stroke="#2DAA2A" stroke-width="19" stroke-linecap="round" fill="none"/>
+        <path d="M1440 534 Q1384 514 1374 472" stroke="#38BB35" stroke-width="17" stroke-linecap="round" fill="none"/>
+        <path d="M1440 458 Q1388 386 1428 312" stroke="#4ACC40" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M1440 494 Q1374 452 1388 396" stroke="#4ACC40" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+        <!-- RIGHT bush + flowers -->
+        <ellipse cx="1388" cy="668" rx="80" ry="48" fill="#46AA42"/>
+        <ellipse cx="1298" cy="662" rx="64" ry="44" fill="#52BA4C"/>
+        <circle cx="1418" cy="622" r="8" fill="#FF8C42" opacity="0.72"/><circle cx="1402" cy="617" r="8" fill="#FF8C42" opacity="0.72"/>
+        <circle cx="1410" cy="611" r="8" fill="#FF8C42" opacity="0.72"/><circle cx="1394" cy="618" r="8" fill="#FF8C42" opacity="0.72"/>
+        <circle cx="1402" cy="624" r="10" fill="#FF8C42"/><circle cx="1402" cy="624" r="5" fill="#FFE048"/>
+        <circle cx="1352" cy="614" r="8" fill="#FF69AB" opacity="0.72"/><circle cx="1334" cy="608" r="8" fill="#FF69AB" opacity="0.72"/>
+        <circle cx="1343" cy="603" r="8" fill="#FF69AB" opacity="0.72"/><circle cx="1325" cy="614" r="8" fill="#FF69AB" opacity="0.72"/>
+        <circle cx="1339" cy="619" r="10" fill="#FF69AB"/><circle cx="1339" cy="619" r="5" fill="#FFE048"/>
+        <circle cx="1293" cy="620" r="7" fill="#A855DE" opacity="0.72"/><circle cx="1279" cy="615" r="7" fill="#A855DE" opacity="0.72"/>
+        <circle cx="1286" cy="610" r="7" fill="#A855DE" opacity="0.72"/>
+        <circle cx="1286" cy="622" r="9" fill="#A855DE"/><circle cx="1286" cy="622" r="4.5" fill="#FFE048"/>
+
+        <!-- ===== BUTTERFLIES ===== -->
+        <!-- orange -->
+        <g transform="translate(342,258) rotate(12)">
+          <ellipse cx="-15" cy="-9" rx="20" ry="14" fill="#FF8C42" opacity="0.85"/>
+          <ellipse cx="15"  cy="-9" rx="20" ry="14" fill="#FF8C42" opacity="0.85"/>
+          <ellipse cx="-12" cy="9"  rx="13" ry="9"  fill="#FFB347" opacity="0.85"/>
+          <ellipse cx="12"  cy="9"  rx="13" ry="9"  fill="#FFB347" opacity="0.85"/>
+          <ellipse cx="0"   cy="0"  rx="3"  ry="12" fill="#5C3A10"/>
+          <circle  cx="-2"  cy="-11" r="2.2" fill="#5C3A10"/>
+          <circle  cx="2"   cy="-11" r="2.2" fill="#5C3A10"/>
+          <circle  cx="-10" cy="-5"  r="5" fill="#FFD080" opacity="0.5"/>
+          <circle  cx="10"  cy="-5"  r="5" fill="#FFD080" opacity="0.5"/>
+        </g>
+        <!-- purple -->
+        <g transform="translate(1102,202) rotate(-8)">
+          <ellipse cx="-15" cy="-9" rx="20" ry="14" fill="#9C6FDE" opacity="0.85"/>
+          <ellipse cx="15"  cy="-9" rx="20" ry="14" fill="#9C6FDE" opacity="0.85"/>
+          <ellipse cx="-12" cy="9"  rx="13" ry="9"  fill="#B88EEE" opacity="0.85"/>
+          <ellipse cx="12"  cy="9"  rx="13" ry="9"  fill="#B88EEE" opacity="0.85"/>
+          <ellipse cx="0"   cy="0"  rx="3"  ry="12" fill="#3A2060"/>
+          <circle  cx="-2"  cy="-11" r="2.2" fill="#3A2060"/>
+          <circle  cx="2"   cy="-11" r="2.2" fill="#3A2060"/>
+          <circle  cx="-10" cy="-5"  r="5" fill="#D8C0FF" opacity="0.5"/>
+          <circle  cx="10"  cy="-5"  r="5" fill="#D8C0FF" opacity="0.5"/>
+        </g>
+        <!-- teal -->
+        <g transform="translate(698,183) rotate(5)">
+          <ellipse cx="-12" cy="-7" rx="15" ry="10" fill="#4DB6AC" opacity="0.85"/>
+          <ellipse cx="12"  cy="-7" rx="15" ry="10" fill="#4DB6AC" opacity="0.85"/>
+          <ellipse cx="-9"  cy="7"  rx="10" ry="7"  fill="#80CBC4" opacity="0.85"/>
+          <ellipse cx="9"   cy="7"  rx="10" ry="7"  fill="#80CBC4" opacity="0.85"/>
+          <ellipse cx="0"   cy="0"  rx="2.5" ry="9" fill="#1A5050"/>
+          <circle  cx="-2"  cy="-8" r="1.8" fill="#1A5050"/>
+          <circle  cx="2"   cy="-8" r="1.8" fill="#1A5050"/>
+        </g>
+
+        <!-- CENTER FLOWERS on ground -->
+        <circle cx="310"  cy="640" r="7"  fill="#FF8C42" opacity="0.8"/>
+        <circle cx="297"  cy="631" r="6"  fill="#FF8C42" opacity="0.7"/>
+        <circle cx="323"  cy="631" r="6"  fill="#FF8C42" opacity="0.7"/>
+        <circle cx="310"  cy="627" r="6"  fill="#FF8C42" opacity="0.7"/>
+        <circle cx="310"  cy="640" r="3.5" fill="#FFE048"/>
+
+        <circle cx="558"  cy="636" r="7"  fill="#FF69AB" opacity="0.8"/>
+        <circle cx="546"  cy="627" r="6"  fill="#FF69AB" opacity="0.7"/>
+        <circle cx="570"  cy="627" r="6"  fill="#FF69AB" opacity="0.7"/>
+        <circle cx="558"  cy="623" r="6"  fill="#FF69AB" opacity="0.7"/>
+        <circle cx="558"  cy="636" r="3.5" fill="#FFE048"/>
+
+        <circle cx="720"  cy="630" r="8"  fill="#FF8C42" opacity="0.8"/>
+        <circle cx="706"  cy="620" r="7"  fill="#FF8C42" opacity="0.7"/>
+        <circle cx="734"  cy="620" r="7"  fill="#FF8C42" opacity="0.7"/>
+        <circle cx="720"  cy="616" r="7"  fill="#FF8C42" opacity="0.7"/>
+        <circle cx="720"  cy="630" r="4"  fill="#FFE048"/>
+
+        <circle cx="882"  cy="638" r="7"  fill="#A855DE" opacity="0.8"/>
+        <circle cx="869"  cy="629" r="6"  fill="#A855DE" opacity="0.7"/>
+        <circle cx="895"  cy="629" r="6"  fill="#A855DE" opacity="0.7"/>
+        <circle cx="882"  cy="625" r="6"  fill="#A855DE" opacity="0.7"/>
+        <circle cx="882"  cy="638" r="3.5" fill="#FFE048"/>
+
+        <circle cx="1128" cy="634" r="7"  fill="#FF69AB" opacity="0.8"/>
+        <circle cx="1116" cy="625" r="6"  fill="#FF69AB" opacity="0.7"/>
+        <circle cx="1140" cy="625" r="6"  fill="#FF69AB" opacity="0.7"/>
+        <circle cx="1128" cy="621" r="6"  fill="#FF69AB" opacity="0.7"/>
+        <circle cx="1128" cy="634" r="3.5" fill="#FFE048"/>
+
+        <!-- GRASS TUFTS -->
+        <g fill="#3AAA36" opacity="0.8">
+          <path d="M222 700 Q226 668 231 700"/><path d="M237 700 Q244 655 249 700"/>
+          <path d="M422 700 Q428 663 434 700"/><path d="M440 700 Q448 650 454 700"/>
+          <path d="M614 700 Q620 666 625 700"/><path d="M632 700 Q640 654 646 700"/>
+          <path d="M812 700 Q818 660 824 700"/><path d="M830 700 Q838 648 843 700"/>
+          <path d="M1012 700 Q1018 662 1024 700"/><path d="M1032 700 Q1040 652 1046 700"/>
+          <path d="M1212 700 Q1218 660 1224 700"/><path d="M1232 700 Q1240 650 1246 700"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-map-marker-alt"></i> Medellín, Colombia · A domicilio
+      </div>
+      <h1 class="hero-title">
+        Tu mascota merece<br/>
+        <span class="highlight">el mejor cuidado</span>
+      </h1>
+      <p class="hero-subtitle">
+        Atención veterinaria profesional, cálida y personalizada —<br/>
+        directamente en la comodidad de tu hogar. 🐾
+      </p>
+      <div class="hero-buttons">
+        <a href="#servicios" class="btn btn-primary">Ver mis servicios</a>
+        <a href="#contacto" class="btn btn-secondary">Agenda una visita</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">+500</span>
+          <span class="stat-label">Mascotas atendidas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">14</span>
+          <span class="stat-label">Años de experiencia</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">A domicilio</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Desliza para explorar</span>
+      <i class="fas fa-chevron-down bounce"></i>
+    </div>
+  </section>
+
+  <!-- ========== SOBRE MÍ ========== -->
+  <section class="about" id="sobre-mi">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-img-frame">
+            <img src="assets/images/VETERINARIOO.png" alt="Dr. Germán Velásquez Gutiérrez - Médico Internista Veterinario" />
+          </div>
+          <!-- Animales decorativos -->
+          <div class="about-deco-animal about-deco-1">🐶</div>
+          <div class="about-deco-animal about-deco-2">🐱</div>
+          <div class="about-deco-animal about-deco-3">🐰</div>
+        </div>
+
+        <div class="about-content">
+          <div class="section-label">Sobre mí</div>
+          <h2 class="section-title">Un veterinario que ama lo que hace</h2>
+          <p class="about-text">
+            Hola, soy el <strong>Dr. Germán Velásquez Gutiérrez</strong>, <strong>Médico Veterinario Internista</strong> con más de <strong>14 años de experiencia</strong>
+            cuidando la salud y el bienestar de las mascotas en clínicas de la ciudad de Medellín.
+          </p>
+          <p class="about-text">
+            Mi pasión por los animales y por brindarles una atención más personalizada me llevó a especializarme
+            en atención a domicilio, ya que creo que es mucho más cómodo y confortable para las mascotas realizar
+            consultas o vacunaciones en casa, sin tener que estresarse al momento de salir.
+          </p>
+          <p class="about-text">
+            Cuento con todos los equipos y medicamentos necesarios para brindarte una atención de primer nivel
+            sin que tengas que salir de casa. Porque tu tiempo y la tranquilidad de tu mascota son lo más importante.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-chip"><i class="fas fa-graduation-cap"></i> Médico Veterinario titulado</div>
+            <div class="highlight-chip"><i class="fas fa-stethoscope"></i> Especialista en Medicina Interna</div>
+            <div class="highlight-chip"><i class="fas fa-hospital"></i> 14+ años en clínicas de Medellín</div>
+            <div class="highlight-chip"><i class="fas fa-paw"></i> Perros, gatos y otros animales</div>
+          </div>
+          <div class="about-values">
+            <div class="value-item">
+              <div class="value-icon"><i class="fas fa-heart"></i></div>
+              <div>
+                <strong>Empatía</strong>
+                <p>Trato a cada mascota como si fuera mía</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><i class="fas fa-star"></i></div>
+              <div>
+                <strong>Profesionalismo</strong>
+                <p>Diagnóstico certero y tratamiento efectivo</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><i class="fas fa-home"></i></div>
+              <div>
+                <strong>100% a domicilio</strong>
+                <p>Voy hasta donde estás tú y tu mascota</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICIOS ========== -->
+  <section class="services" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">¿En qué te ayudo?</div>
+        <h2 class="section-title">Mis Servicios</h2>
+        <p class="section-desc">Atención veterinaria completa directamente en tu casa. Sin filas, sin estrés para tu mascota.</p>
+      </div>
+      <div class="sc2-grid">
+
+        <!-- Fila 1: wide(2) + small(1) + small(1) — wide a la IZQUIERDA -->
+        <div class="sc2-card sc2-card--wide" style="--c1:#01579B;--c2:#002171;">
+          <div class="sc2-emoji">🫀</div>
+          <div class="sc2-overlay">
+            <h3 class="sc2-title">Medicina Interna + ECG</h3>
+            <p class="sc2-desc">Consulta especializada con electrocardiograma incluido. Diagnóstico profundo del corazón y órganos internos en tu casa.</p>
+            <div class="sc2-footer">
+              <span class="sc2-price">$250.000</span>
+              <button class="sc2-btn" data-service="medicinaInterna">Más info <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sc2-card" style="--c1:#43A047;--c2:#1B5E20;">
+          <div class="sc2-emoji">💉</div>
+          <div class="sc2-overlay">
+            <h3 class="sc2-title">Vacunación</h3>
+            <p class="sc2-desc">Esquemas de vacunación completos para perros y gatos. Carnés y registros incluidos.</p>
+            <div class="sc2-footer">
+              <span class="sc2-price">$130.000</span>
+              <button class="sc2-btn" data-service="vacunacion">Más info <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sc2-card" style="--c1:#00897B;--c2:#004D40;">
+          <div class="sc2-emoji">🩺</div>
+          <div class="sc2-overlay">
+            <h3 class="sc2-title">Consulta General</h3>
+            <p class="sc2-desc">Llego a tu casa con maletín médico completo. Examen físico, diagnóstico claro y plan de tratamiento.</p>
+            <div class="sc2-footer">
+              <span class="sc2-price">$120.000</span>
+              <button class="sc2-btn" data-service="consulta">Más info <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fila 2: small(1) + small(1) + wide(2) — wide a la DERECHA -->
+        <div class="sc2-card" style="--c1:#1565C0;--c2:#0D47A1;">
+          <div class="sc2-emoji">🦷</div>
+          <div class="sc2-overlay">
+            <h3 class="sc2-title">Odontología Veterinaria</h3>
+            <p class="sc2-desc">Limpieza dental profunda, tratamiento de gingivitis y mal aliento. La salud oral también importa.</p>
+            <div class="sc2-footer">
+              <span class="sc2-price">Desde $120.000</span>
+              <button class="sc2-btn" data-service="odontologia">Más info <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sc2-card" style="--c1:#558B2F;--c2:#33691E;">
+          <div class="sc2-emoji">🐾</div>
+          <div class="sc2-overlay">
+            <h3 class="sc2-title">Desparasitación</h3>
+            <p class="sc2-desc">Control de parásitos internos y externos. Protege a tu mascota y a toda tu familia.</p>
+            <div class="sc2-footer">
+              <span class="sc2-price">Desde $50.000</span>
+              <button class="sc2-btn" data-service="desparasitacion">Más info <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sc2-card sc2-card--wide" style="--c1:#7B1FA2;--c2:#4A148C;">
+          <div class="sc2-emoji">🔬</div>
+          <div class="sc2-overlay">
+            <h3 class="sc2-title">Diagnóstico y Laboratorio</h3>
+            <p class="sc2-desc">Tomo las muestras en tu casa y las envío al laboratorio. Hemograma, química sanguínea, uroanálisis y más. Resultados en 24–48 h con asesoría completa.</p>
+            <div class="sc2-footer">
+              <span class="sc2-price">Desde $80.000</span>
+              <button class="sc2-btn" data-service="diagnostico">Más info <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fila 3: wide completa (4 cols) -->
+        <div class="sc2-card sc2-card--wide" style="grid-column: span 4; --c1:#C2185B;--c2:#880E4F;">
+          <div class="sc2-emoji">✂️</div>
+          <div class="sc2-overlay">
+            <h3 class="sc2-title">Cirugías Menores</h3>
+            <p class="sc2-desc">Procedimientos quirúrgicos menores con todo el material esterilizado. Tu mascota se recupera en casa, en su ambiente tranquilo y sin estrés.</p>
+            <div class="sc2-footer">
+              <span class="sc2-price">Desde $120.000</span>
+              <button class="sc2-btn" data-service="cirugia">Más info <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fila 4: Banner domicilio -->
+        <div class="sc2-card sc2-card--banner" style="--c1:#E64A19;--c2:#BF360C;">
+          <div class="sc2-emoji">🏠</div>
+          <div class="sc2-overlay">
+            <h3 class="sc2-title">Visita a Domicilio</h3>
+            <p class="sc2-desc">Mi servicio es <strong style="color:white;">100% a domicilio</strong>. Me movilizo por todo el Área Metropolitana de Medellín con todo el equipo listo.</p>
+            <div class="sc2-chips">
+              <span class="sc2-chip"><i class="fas fa-map-marker-alt"></i> Todo Medellín y Área Metro</span>
+              <span class="sc2-chip"><i class="fas fa-clock"></i> Lunes a Domingo, 7am – 7pm</span>
+              <span class="sc2-chip"><i class="fas fa-check-circle"></i> Sin costo de desplazamiento</span>
+              <span class="sc2-chip"><i class="fas fa-box"></i> Todo el equipo incluido</span>
+            </div>
+            <div class="sc2-footer">
+              <span class="sc2-price">Incluido en cada servicio</span>
+              <button class="sc2-btn" data-service="domicilio">Más info <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MODAL SERVICIOS ========== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box" id="modalBox">
+      <div class="modal-header" id="modalHeader">
+        <div class="modal-emoji" id="modalEmoji"></div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc" id="modalDesc"></p>
+        <ul class="modal-list" id="modalList"></ul>
+        <div class="modal-price-box">
+          <span class="modal-price-icon">💰</span>
+          <span class="modal-price" id="modalPrice"></span>
+        </div>
+        <a id="modalWa" href="#" target="_blank" class="modal-wa-btn">
+          <i class="fab fa-whatsapp"></i> Agendar este servicio
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL CASOS ========== -->
+  <div class="case-modal-overlay" id="caseModalOverlay">
+    <div class="case-modal-box" id="caseModalBox">
+      <button class="case-modal-close" id="caseModalClose"><i class="fas fa-times"></i></button>
+      <div class="case-modal-img-wrap">
+        <div class="cm-slider-track" id="cmSliderTrack">
+          <div class="cm-slide">
+            <img class="case-modal-img" id="caseModalImg" src="" alt="">
+          </div>
+          <div class="cm-slide">
+            <video class="case-modal-video" id="caseModalVideo" playsinline controls></video>
+          </div>
+        </div>
+        <button class="cm-arrow cm-arrow--prev cm-hidden" id="cmArrowPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="cm-arrow cm-arrow--next cm-hidden" id="cmArrowNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="cm-dots cm-hidden" id="cmDots">
+          <span class="cm-dot active"></span>
+          <span class="cm-dot"></span>
+        </div>
+        <div class="case-modal-badge" id="caseModalBadge"></div>
+      </div>
+      <div class="case-modal-body">
+        <h3 class="case-modal-name" id="caseModalName"></h3>
+        <div class="case-modal-result" id="caseModalResult"></div>
+        <p class="case-modal-full" id="caseModalFull"></p>
+        <div class="case-modal-facts" id="caseModalFacts"></div>
+        <a class="case-modal-wa" id="caseModalWa" href="#" target="_blank">
+          <i class="fab fa-whatsapp"></i> Agendar una consulta
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== GALERÍA ========== -->
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Mis Pacientes</div>
+        <h2 class="section-title">Casos de éxito 🐾</h2>
+        <p class="section-desc">Cada visita es una historia de amor. Estos son algunos de mis peludos favoritos y cómo los ayudé.</p>
+      </div>
+
+      <div class="cases-grid">
+
+        <div class="case-card" style="--case-color:#E65100;" data-case="cooper">
+          <div class="case-top">
+            <img class="case-img" src="assets/images/casos/cooper .jpeg" alt="Cooper" loading="lazy">
+            <div class="case-badge">Urgencias · Cardiología</div>
+          </div>
+          <div class="case-body">
+            <h4 class="case-name">Cooper 🐾</h4>
+            <div class="case-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="case-snippet">Colapso agudo con dificultad respiratoria y deterioro hemodinámico. ECG y estabilización a domicilio.</p>
+            <div class="case-result"><i class="fas fa-heart-pulse"></i> Estabilización hemodinámica exitosa</div>
+            <button class="case-btn" data-case="cooper">Conocer más <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="case-card" style="--case-color:#29B6F6;" data-case="tokio">
+          <div class="case-top">
+            <img class="case-img" src="assets/images/casos/tokio.jpeg" alt="Tokio" loading="lazy">
+            <div class="case-badge">Oftalmología</div>
+          </div>
+          <div class="case-body">
+            <h4 class="case-name">Tokio &#x1F415;&#x200D;&#x1F9BA;</h4>
+            <div class="case-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="case-snippet">Úlcera corneal diagnosticada a domicilio. Tratamiento médico y seguimiento hasta recuperación visual completa.</p>
+            <div class="case-result"><i class="fas fa-eye"></i> Visión recuperada</div>
+            <button class="case-btn" data-case="tokio">Conocer más <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="case-card" style="--case-color:#E91E8C;" data-case="mia">
+          <div class="case-top">
+            <img class="case-img" src="assets/images/casos/mia.jpeg" alt="Mia" loading="lazy">
+            <div class="case-badge">Oncología</div>
+          </div>
+          <div class="case-body">
+            <h4 class="case-name">Mia &#x1F436;</h4>
+            <div class="case-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="case-snippet">Linfoma diagnosticado y manejado a domicilio. Seguimiento oncológico y calidad de vida preservada.</p>
+            <div class="case-result"><i class="fas fa-ribbon"></i> Calidad de vida preservada</div>
+            <button class="case-btn" data-case="mia">Conocer más <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+      </div><!-- /cases-grid -->
+
+      <p class="gallery-note">
+        <i class="fas fa-paw"></i>
+        ¿Quieres que tu mascota aparezca aquí? ¡Escríbeme y compárteme su historia!
+      </p>
+    </div><!-- /container -->
+  </section>
+
+  <!-- ========== COBERTURA + MAPA ========== -->
+  <section class="coverage" id="cobertura">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">¿Dónde voy?</div>
+        <h2 class="section-title">Cobertura en Medellín</h2>
+        <p class="section-desc">Me desplazo por toda el Área Metropolitana de Medellín y municipios cercanos.</p>
+      </div>
+      <div class="coverage-grid">
+        <div class="coverage-info">
+          <h3>Zonas de atención</h3>
+          <div class="zones-list">
+            <div class="zone-item"><i class="fas fa-check-circle"></i> El Poblado</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Laureles - Estadio</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Envigado</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Sabaneta</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Belén</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Robledo</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Itagüí</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> La América</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Buenos Aires</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Bello</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Centro de Medellín</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Caldas</div>
+            <div class="zone-item"><i class="fas fa-check-circle"></i> Copacabana</div>
+            <div class="zone-item zone-item--special"><i class="fas fa-plus-circle"></i> Y más... ¡Consulta!</div>
+          </div>
+          <div class="coverage-cta">
+            <p>¿No ves tu barrio? <strong>Escríbeme</strong>, seguro puedo llegar.</p>
+            <a href="https://wa.me/573104668704" target="_blank" class="btn btn-primary">
+              <i class="fab fa-whatsapp"></i> Consultar cobertura
+            </a>
+          </div>
+        </div>
+        <div class="map-container">
+          <div id="map"></div>
+          <div class="map-legend">
+            <span><i class="fas fa-map-marker-alt" style="color:#FF8C42"></i> Zona de operación principal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIOS ========== -->
+  <section class="testimonials" id="testimonios">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Lo que dicen</div>
+        <h2 class="section-title">Familias felices 🐾</h2>
+        <p class="section-desc">La satisfacción de mis clientes y sus mascotas es mi mayor recompensa.</p>
+      </div>
+      <div class="testimonials-slider" id="testimonialsSlider">
+        <div class="testimonials-track" id="testimonialsTrack">
+
+          <div class="testimonial-card">
+            <div class="test-stars">⭐⭐⭐⭐⭐</div>
+            <p>"No tenía cómo llevarlo a una clínica en ese momento y Cooper estaba muy mal. El Dr. Germán llegó rápido, lo estabilizó en casa y nos guió en todo momento. Le salvaste la vida a mi perro. ¡Gracias de verdad!"</p>
+            <div class="test-author">
+              <div class="test-avatar">👨</div>
+              <div>
+                <strong>Dueño de Cooper</strong>
+                <span>Medellín</span>
+              </div>
+            </div>
+            <div class="test-pet">🐕 Cooper — Urgencias cardiológicas</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">⭐⭐⭐⭐⭐</div>
+            <p>"Tokio amaneció con el ojo cerrado y llorando, me asusté mucho. El Dr. Germán vino ese mismo día, le hizo el examen completo aquí en casa y le dio tratamiento al momento. En dos días ya estaba perfecta. ¡Increíble atención!"</p>
+            <div class="test-author">
+              <div class="test-avatar">👩</div>
+              <div>
+                <strong>Dueña de Tokio</strong>
+                <span>Medellín</span>
+              </div>
+            </div>
+            <div class="test-pet">🐶 Tokio — Úlcera corneal</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">⭐⭐⭐⭐⭐</div>
+            <p>"Cuando nos dijeron que Mia tenía linfoma fue muy duro. Pero el Dr. Germán nos explicó todo con mucha paciencia, nos enseñó cómo darle el tratamiento en casa y siempre estuvo disponible. Mia vivió con calidad de vida gracias a él."</p>
+            <div class="test-author">
+              <div class="test-avatar">👩</div>
+              <div>
+                <strong>Dueña de Mia</strong>
+                <span>Medellín</span>
+              </div>
+            </div>
+            <div class="test-pet">🐕 Mia — Linfoma oncológico</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" id="prevBtn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <div class="slider-dots" id="sliderDots"></div>
+        <button class="slider-btn" id="nextBtn" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACTO ========== -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">¡Hablemos!</div>
+        <h2 class="section-title">Agenda una visita</h2>
+        <p class="section-desc">¿Tu mascota necesita atención? Contáctame y coordinamos la visita lo antes posible.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card contact-card--wa">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/573104668704" target="_blank">+57 310 466 8704</a>
+            </div>
+          </div>
+          <div class="contact-card contact-card--phone">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Teléfono</strong>
+              <a href="tel:+573104668704">+57 310 466 8704</a>
+            </div>
+          </div>
+          <div class="contact-card contact-card--location">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Ubicación</strong>
+              <span>Medellín, Antioquia, Colombia</span>
+            </div>
+          </div>
+          <div class="contact-card contact-card--hours">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Horario</strong>
+              <span>Lun - Sáb: 7am – 7pm</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://wa.me/573104668704" target="_blank" class="social-link social-link--ig" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/573104668704" target="_blank" class="social-link social-link--fb" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/@germanveterinario?_r=1&amp;_t=ZS-95DrlZFc1Uj" target="_blank" class="social-link social-link--tt" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://wa.me/573104668704" target="_blank" class="social-link social-link--wa" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Envíame un mensaje</h3>
+          <div class="form-group">
+            <label for="name">Tu nombre</label>
+            <input type="text" id="name" name="name" placeholder="¿Cómo te llamas?" required />
+          </div>
+          <div class="form-group">
+            <label for="pet">Nombre y tipo de mascota</label>
+            <input type="text" id="pet" name="pet" placeholder="Ej: Rex, perro Pastor Alemán" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Servicio que necesitas</label>
+            <select id="service" name="service" required>
+              <option value="">Selecciona un servicio...</option>
+              <option>💉 Vacunación</option>
+              <option>🩺 Consulta General</option>
+              <option>🫀 Medicina Interna + ECG</option>
+              <option>🔬 Diagnóstico y Laboratorio</option>
+              <option>✂️ Cirugías Menores</option>
+              <option>🦷 Odontología Veterinaria</option>
+              <option>🐾 Desparasitación</option>
+              <option>🏠 Visita a Domicilio</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="barrio">Barrio o sector</label>
+            <input type="text" id="barrio" name="barrio" placeholder="Ej: El Poblado, Laureles, Envigado..." required />
+          </div>
+          <div class="form-group">
+            <label>Tipo de atención</label>
+            <div class="form-radio-group">
+              <label class="form-radio">
+                <input type="radio" name="urgencia" value="Con cita" checked />
+                <span>📅 Con cita</span>
+              </label>
+              <label class="form-radio">
+                <input type="radio" name="urgencia" value="Urgente" />
+                <span>🚨 Urgente</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+          </button>
+          <p class="form-note">Al enviar, se abrirá WhatsApp con tu mensaje listo. ¡Sin complicaciones!</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-top-bar"></div>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom:18px;">
+            <div class="logo-icon logo-icon--small">
+              <img src="assets/images/VETERINARIOO.png" alt="Dr. Velásquez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+            </div>
+            <div class="logo-text">
+              <span class="logo-name" style="color:white;">Dr. Velásquez</span>
+              <span class="logo-sub">Internista Veterinario</span>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            "Cada mascota tiene una historia,<br>y yo quiero ser parte de la tuya."
+          </p>
+          <a href="https://wa.me/573104668704?text=Hola%20Dr.%20Germ%C3%A1n%2C%20quiero%20agendar%20una%20consulta" target="_blank" class="footer-wa-btn">
+            <i class="fab fa-whatsapp"></i> Agendar ahora
+          </a>
+        </div>
+
+        <!-- NAV -->
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#galeria">Casos Reales</a></li>
+            <li><a href="#cobertura">Cobertura</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- SERVICIOS -->
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">&#128137; Vacunación</a></li>
+            <li><a href="#servicios">&#129658; Consulta General</a></li>
+            <li><a href="#servicios">&#128705; Grooming</a></li>
+            <li><a href="#servicios">&#128062; Desparasitación</a></li>
+            <li><a href="#servicios">&#129463; Odontología</a></li>
+            <li><a href="#servicios">&#9986;&#65039; Cirugías menores</a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <div class="footer-info">
+            <div class="footer-info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Medellín, Colombia</span>
+            </div>
+            <div class="footer-info-item">
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/573104668704" target="_blank">+57 310 466 8704</a>
+            </div>
+            <div class="footer-info-item">
+              <i class="fas fa-clock"></i>
+              <span>Lun–Sáb &middot; 7am–7pm</span>
+            </div>
+          </div>
+          <div class="footer-socials">
+            <a href="https://wa.me/573104668704" target="_blank" aria-label="Instagram" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/573104668704" target="_blank" aria-label="Facebook" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@germanveterinario?_r=1&amp;_t=ZS-95DrlZFc1Uj" target="_blank" aria-label="TikTok" class="footer-social-icon"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/573104668704" target="_blank" aria-label="WhatsApp" class="footer-social-icon footer-social-icon--wa"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dr. Germán Darío Velásquez &middot; Médico Internista Veterinario &middot; Medellín, Colombia</p>
+        <p>Hecho con <span style="color:#FF8C42">♥️</span> para los amigos de 4 patas</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

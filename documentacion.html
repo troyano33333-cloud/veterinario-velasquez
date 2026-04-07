@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="ProgId" content="Word.Document" />
+  <meta name="Generator" content="Microsoft Word 15" />
+  <title>Documentación – Dr. Germán Velásquez Gutiérrez · Médico Veterinario Internista</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', 'Calibri', sans-serif;
+      font-size: 11pt;
+      color: #1a1a2e;
+      background: #f5f5f5;
+      line-height: 1.7;
+    }
+
+    .page {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ── PORTADA ── */
+    .cover {
+      background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: white;
+      padding: 80px 70px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '🐾';
+      position: absolute;
+      font-size: 280px;
+      opacity: 0.04;
+      right: -40px;
+      top: -40px;
+      line-height: 1;
+    }
+    .cover-badge {
+      display: inline-block;
+      background: rgba(255,140,66,0.2);
+      border: 1px solid rgba(255,140,66,0.5);
+      color: #FF8C42;
+      font-size: 9pt;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+    }
+    .cover h1 {
+      font-size: 34pt;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .cover h1 span { color: #FF8C42; }
+    .cover-sub {
+      font-size: 14pt;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 50px;
+      max-width: 520px;
+    }
+    .cover-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 32px;
+    }
+    .cover-meta-item label {
+      display: block;
+      font-size: 7.5pt;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 4px;
+    }
+    .cover-meta-item span {
+      font-size: 11pt;
+      font-weight: 600;
+      color: white;
+    }
+
+    /* ── CONTENIDO ── */
+    .content { padding: 60px 70px; }
+
+    /* ── SECCIÓN ── */
+    .section { margin-bottom: 52px; }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: #FF8C42;
+      color: white;
+      font-size: 11pt;
+      font-weight: 800;
+      border-radius: 8px;
+      margin-right: 12px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    h2.section-title {
+      font-size: 20pt;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #FFF0E6;
+    }
+    h3.sub-title {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 24px 0 10px;
+    }
+    h3.sub-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 16px;
+      background: #FF8C42;
+      border-radius: 2px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    p { margin-bottom: 10px; color: #333; font-size: 10.5pt; }
+
+    /* ── TARJETAS RESUMEN ── */
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .cards-row-2 { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      background: #FAFAFA;
+      border: 1.5px solid #f0e8df;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .card-icon { font-size: 22pt; margin-bottom: 8px; display: block; }
+    .card h4 { font-size: 10pt; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+    .card p { font-size: 9pt; color: #666; margin: 0; }
+    .card.orange { border-color: #FFB347; background: #FFF8F0; }
+    .card.teal   { border-color: #80CBC4; background: #F0FAF9; }
+    .card.purple { border-color: #B28FEE; background: #F7F3FF; }
+    .card.pink   { border-color: #F48FB1; background: #FFF0F5; }
+    .card.blue   { border-color: #90CAF9; background: #F0F4FF; }
+    .card.green  { border-color: #A5D6A7; background: #F3FAF3; }
+
+    /* ── TABLA ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 9.5pt;
+    }
+    thead th {
+      background: #1a1a2e;
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 9pt;
+    }
+    tbody tr:nth-child(even) { background: #FAFAFA; }
+    tbody tr:hover { background: #FFF0E6; }
+    tbody td { padding: 9px 14px; border-bottom: 1px solid #f0e8df; color: #333; }
+    tbody td strong { color: #1a1a2e; }
+
+    /* ── DIAGRAMAS ── */
+    .diagram { margin: 20px 0; }
+
+    /* Diagrama flujo de usuario */
+    .flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      margin: 20px 0;
+    }
+    .flow-box {
+      background: white;
+      border: 2px solid #FF8C42;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 9pt;
+      font-weight: 600;
+      color: #1a1a2e;
+      text-align: center;
+      min-width: 110px;
+    }
+    .flow-box.start { background: #FF8C42; color: white; }
+    .flow-box.end   { background: #4DB6AC; border-color: #4DB6AC; color: white; }
+    .flow-box.decision {
+      background: #FFF0E6;
+      border-color: #FF5722;
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8.5pt;
+    }
+    .flow-arrow {
+      font-size: 18pt;
+      color: #FF8C42;
+      margin: 0 6px;
+      font-weight: 300;
+    }
+
+    /* Arquitectura de archivos */
+    .file-tree {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      border-radius: 12px;
+      padding: 24px 28px;
+      font-family: 'Courier New', monospace;
+      font-size: 9.5pt;
+      line-height: 2;
+      margin: 16px 0;
+    }
+    .file-tree .folder { color: #FF8C42; font-weight: 700; }
+    .file-tree .file-html { color: #81C784; }
+    .file-tree .file-css  { color: #64B5F6; }
+    .file-tree .file-js   { color: #FFD54F; }
+    .file-tree .file-img  { color: #CE93D8; }
+    .file-tree .comment   { color: #546E7A; font-style: italic; }
+
+    /* Stack tecnológico */
+    .tech-pill {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      margin: 4px;
+    }
+    .tech-pill.html  { background: #FFE0B2; color: #E65100; border: 1px solid #FFB74D; }
+    .tech-pill.css   { background: #BBDEFB; color: #1565C0; border: 1px solid #64B5F6; }
+    .tech-pill.js    { background: #FFF9C4; color: #F57F17; border: 1px solid #FFD54F; }
+    .tech-pill.lib   { background: #E8F5E9; color: #2E7D32; border: 1px solid #81C784; }
+    .tech-pill.font  { background: #F3E5F5; color: #6A1B9A; border: 1px solid #CE93D8; }
+
+    /* Secciones del sitio */
+    .site-section-row {
+      display: grid;
+      grid-template-columns: 36px 140px 1fr 100px;
+      align-items: start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #f0e8df;
+    }
+    .site-section-row:last-child { border-bottom: none; }
+    .section-num-small {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #FF8C42;
+      color: white;
+      font-size: 9.5pt;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .site-section-name { font-weight: 700; font-size: 10pt; color: #1a1a2e; }
+    .site-section-name small { display: block; font-weight: 400; color: #888; font-size: 8.5pt; font-family: monospace; }
+    .site-section-desc { font-size: 9.5pt; color: #555; padding-top: 2px; }
+    .section-bg-pill {
+      font-size: 8pt;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 3px;
+    }
+    .bg-pink  { background: #FFF0E6; color: #E65100; border: 1px solid #FFB347; }
+    .bg-white { background: #f5f5f5; color: #555;    border: 1px solid #ddd; }
+
+    /* JavaScript módulos */
+    .js-module {
+      background: #1a1a2e;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 10px 0;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .js-num {
+      background: #FF8C42;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 11pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .js-module h4 { color: #FFD54F; font-size: 10pt; font-weight: 700; margin-bottom: 4px; }
+    .js-module p  { color: #90A4AE; font-size: 9pt; margin: 0; line-height: 1.6; }
+
+    /* Servicios grid */
+    .services-doc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .service-doc-card {
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1.5px solid;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .service-doc-emoji { font-size: 22pt; line-height: 1.2; }
+    .service-doc-card h4 { font-size: 10pt; font-weight: 700; margin-bottom: 3px; }
+    .service-doc-card p { font-size: 8.5pt; color: #666; margin: 0 0 4px; }
+    .service-price-tag {
+      display: inline-block;
+      font-size: 8pt;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 50px;
+      background: rgba(255,140,66,0.15);
+      color: #E65100;
+      border: 1px solid rgba(255,140,66,0.3);
+    }
+
+    /* Casos de éxito */
+    .case-doc-row {
+      display: grid;
+      grid-template-columns: 28px 140px 1fr 140px;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0e8df;
+      font-size: 9.5pt;
+    }
+    .case-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11pt;
+    }
+
+    /* Variables CSS */
+    .var-row {
+      display: grid;
+      grid-template-columns: 200px 100px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0e8df;
+      font-size: 9pt;
+    }
+    .var-name { font-family: monospace; color: #9C6FDE; font-weight: 600; }
+    .color-swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    /* Diagrama de modal */
+    .modal-flow-diagram {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin: 20px 0;
+      align-items: center;
+    }
+    .mf-box {
+      background: #FFF0E6;
+      border: 2px solid #FF8C42;
+      border-radius: 8px;
+      padding: 10px 8px;
+      text-align: center;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+    .mf-arrow { text-align: center; font-size: 16pt; color: #FF8C42; }
+    .mf-box.active { background: #FF8C42; color: white; border-color: #FF8C42; }
+    .mf-box.green  { background: #E8F5E9; border-color: #81C784; color: #2E7D32; }
+
+    /* Responsive + móvil */
+    .responsive-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 9pt;
+    }
+    .responsive-table th {
+      background: #1a1a2e;
+      color: white;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    .responsive-table td { padding: 8px 12px; border-bottom: 1px solid #f0e8df; }
+    .responsive-table tr:nth-child(even) { background: #FAFAFA; }
+
+    /* Separador */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, #FF8C42, transparent);
+      margin: 40px 0;
+    }
+
+    /* Nota */
+    .note {
+      background: #FFF8F0;
+      border-left: 4px solid #FF8C42;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 9.5pt;
+      color: #555;
+    }
+    .note strong { color: #E65100; }
+
+    /* Firma */
+    .signature {
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      color: white;
+      padding: 40px 70px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .signature h3 { font-size: 14pt; font-weight: 700; margin-bottom: 6px; color: #FF8C42; }
+    .signature p  { font-size: 9.5pt; color: rgba(255,255,255,0.7); margin: 2px 0; }
+    .sig-right { text-align: right; }
+    .sig-right p { font-size: 9pt; color: rgba(255,255,255,0.5); }
+
+    /* Tabla de contenidos */
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 7px 0;
+      border-bottom: 1px dotted #ddd;
+      font-size: 10pt;
+    }
+    .toc-item:last-child { border-bottom: none; }
+    .toc-item-title { color: #1a1a2e; font-weight: 500; }
+    .toc-item-num { color: #FF8C42; font-weight: 700; font-size: 9pt; }
+    .toc-sub {
+      padding-left: 22px;
+      font-size: 9pt;
+      color: #666;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════════
+       PORTADA
+  ══════════════════════════════════════════ -->
+  <div class="cover">
+    <div class="cover-badge">Documentación Técnica · v1.1 — Actualizada Abril 2, 2026</div>
+    <h1>Dr. Germán Velásquez Gutiérrez<br/><span>Médico Veterinario Internista</span></h1>
+    <p class="cover-sub">Documentación completa del sitio web — arquitectura, estructura, flujos, servicios y componentes visuales</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>Creador</label>
+        <span>Jose Caballero</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Fecha</label>
+        <span>Abril 2, 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Versión</label>
+        <span>1.0 — Producción</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- ══════════════════════════════════════════
+         TABLA DE CONTENIDOS
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">📋</span>Tabla de Contenidos</h2>
+      <div class="toc-item"><span class="toc-item-title">1. Resumen del Proyecto</span><span class="toc-item-num">§1</span></div>
+      <div class="toc-item"><span class="toc-item-title">2. Stack Tecnológico</span><span class="toc-item-num">§2</span></div>
+      <div class="toc-item"><span class="toc-item-title">3. Estructura de Archivos</span><span class="toc-item-num">§3</span></div>
+      <div class="toc-item toc-sub"><span class="toc-item-title">3.1 index.html · 3.2 css/ (4 módulos) · 3.3 js/ (9 módulos) · 3.4 assets/images/</span><span class="toc-item-num">§3</span></div>
+      <div class="toc-item"><span class="toc-item-title">4. Arquitectura Visual del Sitio — Secciones</span><span class="toc-item-num">§4</span></div>
+      <div class="toc-item"><span class="toc-item-title">5. Flujo de Navegación del Usuario</span><span class="toc-item-num">§5</span></div>
+      <div class="toc-item"><span class="toc-item-title">6. Sistema de Modal de Servicios</span><span class="toc-item-num">§6</span></div>
+      <div class="toc-item"><span class="toc-item-title">7. Catálogo de Servicios</span><span class="toc-item-num">§7</span></div>
+      <div class="toc-item"><span class="toc-item-title">8. Casos de Éxito (Galería)</span><span class="toc-item-num">§8</span></div>
+      <div class="toc-item"><span class="toc-item-title">9. Módulos JavaScript</span><span class="toc-item-num">§9</span></div>
+      <div class="toc-item"><span class="toc-item-title">10. Variables CSS y Paleta de Colores</span><span class="toc-item-num">§10</span></div>
+      <div class="toc-item"><span class="toc-item-title">11. Diseño Responsivo</span><span class="toc-item-num">§11</span></div>
+      <div class="toc-item"><span class="toc-item-title">12. Cobertura Geográfica</span><span class="toc-item-num">§12</span></div>
+      <div class="toc-item"><span class="toc-item-title">13. Formulario de Contacto y WhatsApp</span><span class="toc-item-num">§13</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §1 RESUMEN
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">1</span>Resumen del Proyecto</h2>
+      <p>El proyecto es un <strong>sitio web profesional de una sola página (SPA)</strong> diseñado para el <strong>Dr. Germán Velásquez Gutiérrez</strong>, Médico Veterinario Internista con servicio a domicilio en Medellín, Colombia. El objetivo principal es captar y convertir clientes potenciales mediante una experiencia visual atractiva, clara y funcional, que dirija a los usuarios hacia WhatsApp para agendar consultas.</p>
+      <p>El sitio combina colores cálidos, animaciones fluidas y un diseño moderno y profesional apto para negocios de salud animal.</p>
+
+      <div class="cards-row" style="margin-top:20px;">
+        <div class="card orange">
+          <span class="card-icon">🎨</span>
+          <h4>Estilo Visual</h4>
+          <p>Disney-inspired. Colores cálidos, animaciones suaves, personajes SVG únicos.</p>
+        </div>
+        <div class="card teal">
+          <span class="card-icon">📱</span>
+          <h4>100% Responsivo</h4>
+          <p>Adaptado para móvil, tablet y escritorio con 3 breakpoints CSS.</p>
+        </div>
+        <div class="card purple">
+          <span class="card-icon">⚡</span>
+          <h4>Sin Backend</h4>
+          <p>Frontend puro. HTML + CSS + JS vanilla. Sin frameworks ni servidor.</p>
+        </div>
+      </div>
+
+      <div class="cards-row">
+        <div class="card green">
+          <span class="card-icon">📊</span>
+          <h4>7 Secciones</h4>
+          <p>Hero, Sobre mí, Servicios, Galería, Cobertura, Testimonios, Contacto.</p>
+        </div>
+        <div class="card blue">
+          <span class="card-icon">🛍️</span>
+          <h4>8 Servicios</h4>
+          <p>Cada servicio tiene modal interactivo con detalles y botón WhatsApp.</p>
+        </div>
+        <div class="card pink">
+          <span class="card-icon">🗺️</span>
+          <h4>Mapa Real</h4>
+          <p>Leaflet.js con OpenStreetMap muestra la cobertura en Medellín.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §2 STACK TECNOLÓGICO
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">2</span>Stack Tecnológico</h2>
+      <p>El proyecto utiliza exclusivamente tecnologías web estándar sin dependencias de build ni frameworks de JavaScript. Esto garantiza compatibilidad universal y facilidad de mantenimiento.</p>
+
+      <h3 class="sub-title">Tecnologías Core</h3>
+      <div>
+        <span class="tech-pill html">HTML5</span>
+        <span class="tech-pill css">CSS3</span>
+        <span class="tech-pill js">JavaScript ES6+</span>
+        <span class="tech-pill js">Vanilla JS (sin frameworks)</span>
+      </div>
+
+      <h3 class="sub-title">Librerías y Dependencias Externas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Librería</th>
+            <th>Versión</th>
+            <th>Propósito</th>
+            <th>Origen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Leaflet.js</strong></td><td>1.9.4</td><td>Mapa interactivo de cobertura en Medellín</td><td>CDN unpkg</td></tr>
+          <tr><td><strong>Font Awesome</strong></td><td>6.5.0</td><td>Iconografía en toda la interfaz</td><td>CDN cdnjs</td></tr>
+          <tr><td><strong>Nunito</strong></td><td>—</td><td>Fuente principal para texto del cuerpo</td><td>Google Fonts</td></tr>
+          <tr><td><strong>Baloo 2</strong></td><td>—</td><td>Fuente de display para títulos y precios</td><td>Google Fonts</td></tr>
+          <tr><td><strong>OpenStreetMap / CARTO</strong></td><td>—</td><td>Tiles del mapa (CartoDB Voyager)</td><td>CDN CARTO</td></tr>
+          <tr><td><strong>Unsplash CDN</strong></td><td>—</td><td>Fotos gratuitas para tarjetas de casos</td><td>images.unsplash.com</td></tr>
+          <tr><td><strong>Pexels CDN</strong></td><td>—</td><td>Fotos gratuitas adicionales (conejo, siamés, loro)</td><td>images.pexels.com</td></tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Sin build tools:</strong> No se usa webpack, Vite, npm ni ningún sistema de construcción. El proyecto se ejecuta directamente con doble clic en <code>index.html</code>.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §3 ESTRUCTURA DE ARCHIVOS
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">3</span>Estructura de Archivos</h2>
+      <p>El proyecto está organizado en carpetas por responsabilidad siguiendo buenas prácticas de frontend. CSS y JS están divididos en módulos. Las imágenes viven en <code>assets/images/</code>. El JavaScript usa <strong>ES Modules</strong> (<code>type="module"</code>).</p>
+
+      <div class="file-tree">
+        <span class="folder">📁 veterinario/</span><br/>
+        &nbsp;&nbsp;├── <span class="file-html">📄 index.html</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— HTML puro, solo estructura (≈915 líneas)</span><br/>
+        &nbsp;&nbsp;├── <span class="folder">📁 css/</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-css">base.css</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Variables :root, reset, botones, utilidades</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-css">layout.css</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Todos los componentes visuales</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-css">animations.css</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— @keyframes y clases .reveal</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <span class="file-css">responsive.css</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Media queries (1024/768/480px)</span><br/>
+        &nbsp;&nbsp;├── <span class="folder">📁 js/</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-js">main.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Punto de entrada, importa todos los módulos</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-js">particles.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Huellas animadas de fondo</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-js">navbar.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Scroll, menú móvil, enlace activo naranja</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-js">reveal.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Animaciones al hacer scroll (IntersectionObserver)</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-js">map.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Mapa Leaflet de Medellín</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-js">slider.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Carrusel de testimonios</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-js">modal.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Modal reutilizable de servicios</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-js">form.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Formulario → mensaje WhatsApp</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <span class="file-js">counters.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Animación de contadores del hero</span><br/>
+        &nbsp;&nbsp;├── <span class="folder">📁 assets/images/</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-img">🖼️ fondo_principal.png</span> &nbsp;&nbsp;<span class="comment">— Fondo del Hero (selva colorida)</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="file-img">🖼️ veterinario.png</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Foto del Dr. Germán Velásquez Gutiérrez</span><br/>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <span class="file-img">🖼️ gato.png</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Imagen decorativa disponible</span><br/>
+        &nbsp;&nbsp;└── <span class="file-html">📄 documentacion.html</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">— Este documento</span>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>Archivo / Carpeta</th><th>Tipo</th><th>Responsabilidad</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>index.html</strong></td><td>HTML5</td><td>Estructura semántica limpia, sin scripts inline</td></tr>
+          <tr><td><strong>css/base.css</strong></td><td>CSS3</td><td>Variables <code>:root</code>, reset, botones, utilidades globales</td></tr>
+          <tr><td><strong>css/layout.css</strong></td><td>CSS3</td><td>Todos los componentes: navbar, hero, secciones, modal, footer</td></tr>
+          <tr><td><strong>css/animations.css</strong></td><td>CSS3</td><td><code>@keyframes</code>, clases <code>.reveal</code>, <code>.reveal-left</code>, <code>.reveal-right</code></td></tr>
+          <tr><td><strong>css/responsive.css</strong></td><td>CSS3</td><td>Media queries: 1024px, 768px, 480px</td></tr>
+          <tr><td><strong>js/main.js</strong></td><td>ES Module</td><td>Punto de entrada — importa e inicializa los 8 módulos</td></tr>
+          <tr><td><strong>js/particles.js</strong></td><td>ES Module</td><td>Huellas animadas flotantes (<code>initPaws</code>)</td></tr>
+          <tr><td><strong>js/navbar.js</strong></td><td>ES Module</td><td>Scroll, menú móvil, enlace activo naranja por sección</td></tr>
+          <tr><td><strong>js/reveal.js</strong></td><td>ES Module</td><td>Animaciones de entrada con <code>IntersectionObserver</code></td></tr>
+          <tr><td><strong>js/map.js</strong></td><td>ES Module</td><td>Mapa Leaflet.js centrado en Medellín</td></tr>
+          <tr><td><strong>js/slider.js</strong></td><td>ES Module</td><td>Carrusel automático de testimonios</td></tr>
+          <tr><td><strong>js/modal.js</strong></td><td>ES Module</td><td>Modal reutilizable con datos de los 8 servicios</td></tr>
+          <tr><td><strong>js/form.js</strong></td><td>ES Module</td><td>Formulario de contacto → redirección a WhatsApp</td></tr>
+          <tr><td><strong>js/counters.js</strong></td><td>ES Module</td><td>Animación de números en el hero al entrar al viewport</td></tr>
+          <tr><td><strong>assets/images/</strong></td><td>PNG</td><td>Todas las imágenes del sitio en una carpeta dedicada</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §4 SECCIONES DEL SITIO
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">4</span>Arquitectura Visual — Secciones</h2>
+      <p>El sitio es una <strong>Single Page Application (SPA)</strong>. Todas las secciones están en el mismo archivo HTML y se navegan con scroll suave (<code>scroll-behavior: smooth</code>). El fondo alterna entre rosa claro y blanco para crear contraste visual.</p>
+
+      <div style="margin-top:16px;">
+        <div class="site-section-row">
+          <div class="section-num-small">🧭</div>
+          <div>
+            <div class="site-section-name">Navbar<small>position: sticky</small></div>
+          </div>
+          <div class="site-section-desc">Barra de navegación fija. Cambia de transparente a sólida al hacer scroll. Logo SVG personalizado + toggle móvil + link de contacto resaltado.</div>
+          <div><span class="section-bg-pill bg-white">Transparente → Sólida</span></div>
+        </div>
+        <div class="site-section-row">
+          <div class="section-num-small">1</div>
+          <div>
+            <div class="site-section-name">Hero<small>#inicio</small></div>
+          </div>
+          <div class="site-section-desc">Sección de impacto inicial. Fondo <code>fondo_principal.png</code> con palmas, flores y cielo. Título, subtítulo, 2 botones CTA (Ver servicios / Agenda visita) y barra de 3 estadísticas animadas (+500 mascotas, 8 años, 100% domicilio).</div>
+          <div><span class="section-bg-pill bg-white">Azul cielo</span></div>
+        </div>
+        <div class="site-section-row">
+          <div class="section-num-small">2</div>
+          <div>
+            <div class="site-section-name">Sobre mí<small>#sobre-mi</small></div>
+          </div>
+          <div class="site-section-desc">Presentación del Dr. Germán Velásquez Gutiérrez, Médico Veterinario Internista. Grid de 2 columnas: foto del veterinario con marcos decorativos + texto. 3 párrafos bio + chips de credenciales (titulado, especialista, 14+ años, perros/gatos/otros animales) + 3 valores (Empatía, Profesionalismo, Domicilio).</div>
+          <div><span class="section-bg-pill bg-pink">Rosa claro</span></div>
+        </div>
+        <div class="site-section-row">
+          <div class="section-num-small">3</div>
+          <div>
+            <div class="site-section-name">Servicios<small>#servicios</small></div>
+          </div>
+          <div class="site-section-desc">8 tarjetas de servicios en grid auto-fill. Cada tarjeta tiene color único, emoji, título, descripción, etiqueta y botón "Más info" que abre el modal correspondiente.</div>
+          <div><span class="section-bg-pill bg-white">Blanco</span></div>
+        </div>
+        <div class="site-section-row">
+          <div class="section-num-small">4</div>
+          <div>
+            <div class="site-section-name">Galería<small>#galeria</small></div>
+          </div>
+          <div class="site-section-desc">6 casos de éxito con fotos reales de Unsplash/Pexels. Cada tarjeta tiene imagen con zoom al hover, badge de servicio, historia del paciente y chip de resultado.</div>
+          <div><span class="section-bg-pill bg-pink">Rosa claro</span></div>
+        </div>
+        <div class="site-section-row">
+          <div class="section-num-small">5</div>
+          <div>
+            <div class="site-section-name">Cobertura<small>#cobertura</small></div>
+          </div>
+          <div class="site-section-desc">Mapa Leaflet.js interactivo centrado en Medellín. Lista de 12 zonas de atención + círculo de cobertura de 10km. Marcador personalizado con huellita 🐾.</div>
+          <div><span class="section-bg-pill bg-white">Blanco</span></div>
+        </div>
+        <div class="site-section-row">
+          <div class="section-num-small">6</div>
+          <div>
+            <div class="site-section-name">Testimonios<small>#testimonios</small></div>
+          </div>
+          <div class="site-section-desc">Slider automático con 5 testimonios de clientes reales. Controles prev/next y dots indicadores. Animación con transición cubic-bezier para suavidad.</div>
+          <div><span class="section-bg-pill bg-pink">Rosa claro</span></div>
+        </div>
+        <div class="site-section-row">
+          <div class="section-num-small">7</div>
+          <div>
+            <div class="site-section-name">Contacto<small>#contacto</small></div>
+          </div>
+          <div class="site-section-desc">Grid 2 columnas: 4 tarjetas de contacto (WhatsApp, teléfono, ubicación, horario) + redes sociales. Formulario que al enviar genera mensaje pre-llenado para WhatsApp.</div>
+          <div><span class="section-bg-pill bg-white">Blanco</span></div>
+        </div>
+        <div class="site-section-row">
+          <div class="section-num-small">🦶</div>
+          <div>
+            <div class="site-section-name">Footer<small>&lt;footer&gt;</small></div>
+          </div>
+          <div class="site-section-desc">Fondo oscuro azul marino. Grid 4 columnas: marca, navegación, lista de servicios, datos de contacto + redes sociales. Copyright 2026.</div>
+          <div><span class="section-bg-pill" style="background:#1a1a2e;color:white;border:1px solid #333;">Oscuro</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §5 FLUJO DE NAVEGACIÓN
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">5</span>Flujo de Navegación del Usuario</h2>
+      <p>El flujo principal está diseñado para dirigir al usuario desde la primera impresión hasta el contacto por WhatsApp, pasando por la información de servicios.</p>
+
+      <h3 class="sub-title">Flujo Principal — Conversión</h3>
+      <div class="flow">
+        <div class="flow-box start">Usuario llega al sitio</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Hero · CTA principal</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Ve servicios disponibles</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Abre modal de servicio</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box end">WhatsApp 💬</div>
+      </div>
+
+      <h3 class="sub-title">Flujo Secundario — Exploración</h3>
+      <div class="flow">
+        <div class="flow-box start">Scroll por la página</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Lee "Sobre mí"</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Ve galería de casos</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Lee testimonios</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box end">Formulario contacto</div>
+      </div>
+
+      <h3 class="sub-title">Flujo del Formulario de Contacto</h3>
+      <div class="flow">
+        <div class="flow-box start">Rellena formulario</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Submit JS handler</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Arma mensaje dinámico</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">wa.me/57... + text=</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box end">WhatsApp del Dr.</div>
+      </div>
+
+      <div class="note">
+        <strong>Punto de conversión único:</strong> Todos los botones de acción (hero, servicios, cobertura, testimonios, footer) dirigen al mismo número de WhatsApp <code>+57 300 123 4567</code>.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §6 SISTEMA DE MODAL
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">6</span>Sistema de Modal de Servicios</h2>
+      <p>Hay <strong>un único modal reutilizable</strong> que se rellena dinámicamente con JavaScript al hacer clic en cualquier botón "Más info". No hay 8 modales separados — solo uno que cambia su contenido.</p>
+
+      <h3 class="sub-title">Flujo del Modal</h3>
+      <div class="modal-flow-diagram">
+        <div class="mf-box">Clic en "Más info" de un servicio</div>
+        <div class="mf-arrow">→</div>
+        <div class="mf-box active">openModal('id') llamado</div>
+        <div class="mf-arrow">→</div>
+        <div class="mf-box">JS busca en objeto <code>servicios</code></div>
+      </div>
+      <div class="modal-flow-diagram" style="margin-top:8px;">
+        <div class="mf-box green">Rellena: emoji, título, desc, lista, precio</div>
+        <div class="mf-arrow">→</div>
+        <div class="mf-box active">Asigna color al header</div>
+        <div class="mf-arrow">→</div>
+        <div class="mf-box green">Muestra overlay con display:flex</div>
+      </div>
+
+      <h3 class="sub-title">Estructura del Objeto <code>servicios</code></h3>
+      <table>
+        <thead>
+          <tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>color</code></td><td>String (hex)</td><td>Color del header del modal. Único por servicio.</td></tr>
+          <tr><td><code>emoji</code></td><td>String (emoji)</td><td>Icono grande en el encabezado del modal.</td></tr>
+          <tr><td><code>titulo</code></td><td>String</td><td>Nombre del servicio. Se muestra como título principal.</td></tr>
+          <tr><td><code>desc</code></td><td>String</td><td>Párrafo descriptivo del servicio (2-3 oraciones).</td></tr>
+          <tr><td><code>puntos</code></td><td>Array&lt;String&gt;</td><td>Lista de 4 puntos clave con checkmarks.</td></tr>
+          <tr><td><code>precio</code></td><td>String</td><td>Precio "Desde $XX.000" mostrado en caja naranja.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-title">Formas de cerrar el modal</h3>
+      <div class="cards-row">
+        <div class="card orange"><span class="card-icon">✕</span><h4>Botón X</h4><p>Botón en esquina superior derecha del modal.</p></div>
+        <div class="card teal"><span class="card-icon">🖱️</span><h4>Click exterior</h4><p>Clic en el overlay oscuro fuera del modal.</p></div>
+        <div class="card purple"><span class="card-icon">⌨️</span><h4>Tecla Escape</h4><p>Evento keydown detecta la tecla Escape.</p></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §7 CATÁLOGO DE SERVICIOS
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">7</span>Catálogo de Servicios</h2>
+      <p>El sitio ofrece <strong>8 servicios veterinarios</strong>, cada uno con color identificador, emoji, descripción detallada y precio base.</p>
+
+      <div class="services-doc-grid">
+        <div class="service-doc-card" style="border-color:#FF8C42;background:#FFF8F0;">
+          <div class="service-doc-emoji">💉</div>
+          <div>
+            <h4>Vacunación</h4>
+            <p>Esquemas completos para perros y gatos. Carnés y registros incluidos.</p>
+            <span class="service-price-tag">$130.000 – Domicilio y revisión incl.</span>
+          </div>
+        </div>
+        <div class="service-doc-card" style="border-color:#4DB6AC;background:#F0FAF9;">
+          <div class="service-doc-emoji">🩺</div>
+          <div>
+            <h4>Consulta General</h4>
+            <p>Examen físico completo en casa, diagnóstico por escrito y plan de tratamiento.</p>
+            <span class="service-price-tag">$120.000</span>
+          </div>
+        </div>
+        <div class="service-doc-card" style="border-color:#9C6FDE;background:#F7F3FF;">
+          <div class="service-doc-emoji">🔬</div>
+          <div>
+            <h4>Diagnóstico y Laboratorio</h4>
+            <p>Toma de muestras en casa. Hemograma, química, uroanálisis.</p>
+            <span class="service-price-tag">Desde $80.000</span>
+          </div>
+        </div>
+        <div class="service-doc-card" style="border-color:#E91E8C;background:#FFF0F7;">
+          <div class="service-doc-emoji">✂️</div>
+          <div>
+            <h4>Cirugías Menores</h4>
+            <p>Sutura de heridas y limpieza de abscesos. Material esterilizado. Seguimiento incluido.</p>
+            <span class="service-price-tag">Desde $120.000</span>
+          </div>
+        </div>
+        <div class="service-doc-card" style="border-color:#FF5722;background:#FFF3F0;">
+          <div class="service-doc-emoji">🏠</div>
+          <div>
+            <h4>Visita a Domicilio</h4>
+            <p>Cobertura en todo el Área Metropolitana de Medellín.</p>
+            <span class="service-price-tag">Incluido en cada servicio</span>
+          </div>
+        </div>
+        <div class="service-doc-card" style="border-color:#00BCD4;background:#F0FAFE;">
+          <div class="service-doc-emoji">🦷</div>
+          <div>
+            <h4>Odontología Veterinaria</h4>
+            <p>Limpieza dental profunda, tratamiento de gingivitis y mal aliento.</p>
+            <span class="service-price-tag">Desde $120.000</span>
+          </div>
+        </div>
+        <div class="service-doc-card" style="border-color:#8BC34A;background:#F3FAF0;">
+          <div class="service-doc-emoji">🐾</div>
+          <div>
+            <h4>Desparasitación</h4>
+            <p>Interna y externa. Pipetas, collares, productos certificados.</p>
+            <span class="service-price-tag">$50.000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §8 CASOS DE ÉXITO
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">8</span>Casos de Éxito — Galería</h2>
+      <p>La galería muestra <strong>6 historias reales de pacientes</strong> atendidos. Cada tarjeta usa fotos gratuitas de Unsplash y Pexels (licencia libre comercial) con zoom al hover y badge del servicio usado.</p>
+
+      <table>
+        <thead>
+          <tr><th>Emoji</th><th>Paciente</th><th>Servicio</th><th>Historia</th><th>Color</th><th>Fuente foto</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🐶</td><td><strong>Max</strong><br/><small>Golden Retriever</small></td><td>Consulta General</td><td>Fiebre alta, diagnosticado en casa. Recuperación total en 3 días.</td><td style="background:#FF8C42;color:white;text-align:center;">#FF8C42</td><td>Unsplash</td></tr>
+          <tr><td>🐱</td><td><strong>Luna</strong><br/><small>Gata Persa</small></td><td>Vacunación</td><td>Vacuna a domicilio, ronroneando en su cama. Sin estrés de traslado.</td><td style="background:#4DB6AC;color:white;text-align:center;">#4DB6AC</td><td>Unsplash</td></tr>
+          <tr><td>🐰</td><td><strong>Topi</strong><br/><small>Holland Lop</small></td><td>Diagnóstico</td><td>Letárgico, problema dental confirmado. Tratado sin hospitalización.</td><td style="background:#9C6FDE;color:white;text-align:center;">#9C6FDE</td><td>Pexels</td></tr>
+          <tr><td></td><td><strong>Mia</strong><br/><small>Gata Siamesa</small></td><td>Cirugía Menor</td><td>Absceso drenado en casa con material estéril. Recuperación sin estrés.</td><td style="background:#E91E8C;color:white;text-align:center;">#E91E8C</td><td>Pexels</td></tr>
+          <tr><td>🦜</td><td><strong>Kiwi</strong><br/><small>Loro Australiano</small></td><td>At. Exóticos</td><td>Pérdida de plumas. Revisión completa, dieta ajustada. Ahora vigoroso.</td><td style="background:#8BC34A;color:white;text-align:center;">#8BC34A</td><td>Pexels</td></tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Fotos libres de derechos:</strong> Todas las imágenes provienen de Unsplash o Pexels bajo licencia Creative Commons Zero (CC0) — aptas para uso comercial sin atribución requerida.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §9 MÓDULOS JAVASCRIPT
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">9</span>Módulos JavaScript</h2>
+      <p>El JavaScript está completamente modularizado en la carpeta <code>js/</code>. Cada archivo tiene una sola responsabilidad y exporta su función de inicialización. El punto de entrada es <code>main.js</code>, que los importa todos usando <strong>ES Modules nativos</strong> (<code>type="module"</code>).</p>
+
+      <div class="js-module">
+        <div class="js-num">1</div>
+        <div>
+          <h4>🐾 Paws Particles — Huellas Animadas</h4>
+          <p>Genera dinámicamente 40 elementos <code>div.paw-particle</code> con posición aleatoria (0–100% horizontal), tamaño 12–28px, duración de animación 10–22s y delay 0–20s. La animación CSS <code>pawFall</code> los hace caer desde arriba con rotación suave.</p>
+        </div>
+      </div>
+
+      <div class="js-module">
+        <div class="js-num">2</div>
+        <div>
+          <h4>🧭 Navbar — Scroll, Toggle Móvil y Enlace Activo</h4>
+          <p>Listener de scroll agrega clase <code>.scrolled</code> al navbar cuando el usuario baja más de 20px (cambia fondo de transparente a blanco). Toggle de menú hamburguesa para móvil. Cierre automático del menú al hacer clic en un enlace. <strong>Enlace activo naranja:</strong> detecta qué sección está visible en el viewport y aplica clase <code>.active</code> al enlace correspondiente — con estilo de pastilla naranja sólida (<code>background: var(--primary)</code>). No afecta al botón CTA de «Contacto».</p>
+        </div>
+      </div>
+
+      <div class="js-module">
+        <div class="js-num">3</div>
+        <div>
+          <h4>✨ Scroll Reveal — Animaciones de Entrada</h4>
+          <p>Usa <code>IntersectionObserver</code> con threshold 0.1 para detectar elementos que entran en viewport. Agrega clases <code>.reveal</code>, <code>.reveal-left</code>, <code>.reveal-right</code> que CSS convierte en animaciones de fade+slide. Delays escalonados para grids.</p>
+        </div>
+      </div>
+
+      <div class="js-module">
+        <div class="js-num">4</div>
+        <div>
+          <h4>🗺️ Leaflet Map — Mapa de Medellín</h4>
+          <p>Inicializa Leaflet.js con tiles CartoDB Voyager centrado en Medellín (6.2442, -75.5812), zoom 12. Marcador personalizado (huellita rotada 45°) con popup de contacto. Círculo de cobertura 10km radio en naranja semitransparente. Envuelto en try/catch.</p>
+        </div>
+      </div>
+
+      <div class="js-module">
+        <div class="js-num">5</div>
+        <div>
+          <h4>🎠 Testimonials Slider — Carrusel Automático</h4>
+          <p>Slider con auto-advance cada 5 segundos. Calcula el ancho de cada tarjeta dinámicamente para el transform. Crea dots indicadores dinámicamente. Botones prev/next con lógica circular (vuelve al inicio al llegar al final).</p>
+        </div>
+      </div>
+
+      <div class="js-module">
+        <div class="js-num">6</div>
+        <div>
+          <h4>📬 Contact Form — WhatsApp Integration</h4>
+          <p>Al hacer submit previene el comportamiento por defecto. Lee todos los campos (nombre, teléfono, mascota, servicio, mensaje) y construye un mensaje de texto formateado. Abre <code>wa.me/573001234567?text=...</code> con <code>window.open</code>. Muestra notificación de éxito.</p>
+        </div>
+      </div>
+
+      <div class="js-module">
+        <div class="js-num">7</div>
+        <div>
+          <h4>🪟 Modal de Servicios — js/modal.js</h4>
+          <p>Contiene el objeto <code>SERVICIOS</code> con los 8 servicios (nombre, descripción, precio, ícono). Las funciones <code>openModal(id)</code> y <code>closeModal()</code> están encapsuladas en este módulo. Los botones de la sección usan <code>data-service="id"</code> y la detección se hace por delegación de eventos en el documento. Cierre con clic externo o tecla Escape.</p>
+        </div>
+      </div>
+
+      <div class="js-module">
+        <div class="js-num">8</div>
+        <div>
+          <h4>🔢 Counters — Animación de Estadísticas</h4>
+          <p>Anima los números del hero (+500 mascotas atendidas, 14 años de experiencia) con efecto suavizado cuando el usuario llega a esa sección. Usa <code>IntersectionObserver</code> para disparar la animación una sola vez. Cada contador tiene duración y paso configurables.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §10 VARIABLES CSS Y COLORES
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">10</span>Variables CSS y Paleta de Colores</h2>
+      <p>Todas las variables del sistema están definidas en <code>:root</code> al inicio de <code>css/base.css</code>. Cambiar un solo valor actualiza automáticamente todo el sitio.</p>
+
+      <h3 class="sub-title">Variables de Color Principales</h3>
+      <div class="var-row" style="font-weight:700;color:#888;font-size:8.5pt;">
+        <div>Variable</div><div>Valor</div><div>Uso</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--primary</div>
+        <div><span class="color-swatch" style="background:#FF8C42;"></span>#FF8C42</div>
+        <div>Color principal naranja. Botones, acentos, precios, íconos.</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--primary-dark</div>
+        <div><span class="color-swatch" style="background:#e67a2e;"></span>#e67a2e</div>
+        <div>Hover del botón principal.</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--secondary</div>
+        <div><span class="color-swatch" style="background:#4DB6AC;"></span>#4DB6AC</div>
+        <div>Color teal. Servicio de vacunación, detalles.</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--accent</div>
+        <div><span class="color-swatch" style="background:#9C6FDE;"></span>#9C6FDE</div>
+        <div>Color púrpura. Servicio de diagnóstico.</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--text</div>
+        <div><span class="color-swatch" style="background:#2d2d2d;"></span>#2d2d2d</div>
+        <div>Texto principal. Casi negro, alta legibilidad.</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--text-light</div>
+        <div><span class="color-swatch" style="background:#666;"></span>#666</div>
+        <div>Texto secundario. Descripciones y párrafos.</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--bg-soft</div>
+        <div><span class="color-swatch" style="background:#FFF8F2;"></span>#FFF8F2</div>
+        <div>Fondo suave. Usado en algunos elementos internos.</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--bg-pink-light</div>
+        <div><span class="color-swatch" style="background:#FFF0E6;"></span>#FFF0E6</div>
+        <div>Fondo rosa claro. Secciones alternadas (Sobre mí, Galería, Testimonios).</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--font</div>
+        <div colspan="2" style="font-style:italic;">'Nunito', sans-serif</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--font-display</div>
+        <div colspan="2" style="font-style:italic;">'Baloo 2', cursive</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--radius</div>
+        <div colspan="2">20px — Border radius estándar de tarjetas</div>
+      </div>
+      <div class="var-row">
+        <div class="var-name">--nav-h</div>
+        <div colspan="2">70px — Altura del navbar. Usado en scroll-padding-top.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §11 DISEÑO RESPONSIVO
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">11</span>Diseño Responsivo</h2>
+      <p>El sitio usa <strong>3 breakpoints</strong> con media queries en <code>css/responsive.css</code> para adaptarse a todos los dispositivos.</p>
+
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Breakpoint</th>
+            <th>Ancho</th>
+            <th>Cambios principales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Desktop</strong></td>
+            <td>&gt; 768px</td>
+            <td>Layout de escritorio completo. Grids de 3 columnas. Navbar horizontal.</td>
+          </tr>
+          <tr>
+            <td><strong>Tablet</strong></td>
+            <td>≤ 768px</td>
+            <td>Servicios → 2 columnas. Casos → 2 columnas. Navbar → hamburguesa. About → 1 columna. Sección padding 70px.</td>
+          </tr>
+          <tr>
+            <td><strong>Móvil</strong></td>
+            <td>≤ 480px</td>
+            <td>Servicios → 1 columna. Casos → 1 columna. Botones hero → columna. Hero título → 2rem. Stats hero → columna. About frame → 100% ancho.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Mobile-first en botones:</strong> Los perros y gatos SVG del hero se ocultan en mobile (<code>display: none</code>) para no sobrecargar la pantalla. El mapa se adapta al 100% del ancho disponible.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §12 COBERTURA GEOGRÁFICA
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">12</span>Cobertura Geográfica</h2>
+      <p>El Dr. Carlos opera en el Área Metropolitana del Valle de Aburrá con centro en Medellín, cubriendo un radio aproximado de 10 kilómetros desde el punto central.</p>
+
+      <div class="cards-row">
+        <div class="card orange">
+          <h4>📍 Centro de operación</h4>
+          <p><strong>Medellín, Antioquia</strong><br/>Coordenadas: 6.2442°N, 75.5812°W</p>
+        </div>
+        <div class="card teal">
+          <h4>🌐 Radio de cobertura</h4>
+          <p><strong>10 km</strong> desde el centro.<br/>Visualizado en mapa como círculo naranja.</p>
+        </div>
+        <div class="card green">
+          <h4>🗓️ Horario</h4>
+          <p><strong>Lunes a Sábado</strong><br/>7:00am – 7:00pm</p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Zonas de Atención Confirmadas</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0;">
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ El Poblado</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ Laureles - Estadio</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ Envigado</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ Sabaneta</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ Belén</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ Robledo</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ Itagüí</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ La América</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ Buenos Aires</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ Bello</div>
+        <div style="padding:8px 12px;background:#FFF0E6;border-radius:8px;font-size:9.5pt;">✅ Centro de Medellín</div>
+        <div style="padding:8px 12px;background:#FFE0B2;border-radius:8px;font-size:9.5pt;">➕ Consultar otros</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         §13 CONTACTO Y WHATSAPP
+    ══════════════════════════════════════════ -->
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">13</span>Formulario de Contacto y WhatsApp</h2>
+      <p>El formulario no envía datos a ningún servidor. Todo el procesamiento ocurre en el navegador del cliente. Al hacer submit, el JS construye un mensaje y abre WhatsApp.</p>
+
+      <h3 class="sub-title">Campos del Formulario</h3>
+      <table>
+        <thead>
+          <tr><th>Campo</th><th>Tipo</th><th>Required</th><th>Se incluye en mensaje WA</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tu nombre</td><td>text</td><td>✅ Sí</td><td>✅ Sí</td></tr>
+          <tr><td>WhatsApp / Teléfono</td><td>tel</td><td>❌ No</td><td>✅ Sí</td></tr>
+          <tr><td>Nombre y tipo de mascota</td><td>text</td><td>❌ No</td><td>✅ Sí</td></tr>
+          <tr><td>Servicio que necesitas</td><td>select</td><td>❌ No</td><td>✅ Sí</td></tr>
+          <tr><td>Cuéntame más</td><td>textarea</td><td>❌ No</td><td>✅ Sí</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-title">Canales de Contacto</h3>
+      <div class="cards-row cards-row-2">
+        <div class="card green">
+          <span class="card-icon">💬</span>
+          <h4>WhatsApp (principal)</h4>
+          <p><strong>+57 300 123 4567</strong><br/>Botón flotante siempre visible + en contacto + en cada modal de servicio.</p>
+        </div>
+        <div class="card blue">
+          <span class="card-icon">📱</span>
+          <h4>Redes Sociales</h4>
+          <p>Instagram, Facebook, TikTok, WhatsApp. Links en sección contacto y footer.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Privacidad:</strong> El formulario no almacena datos. No hay base de datos, no hay cookies de seguimiento, no hay analytics. El único punto de datos es la apertura de WhatsApp.
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- ══════════════════════════════════════════
+       FIRMA
+  ══════════════════════════════════════════ -->
+  <div class="signature">
+    <div>
+      <h3>Jose Caballero</h3>
+      <p>Creador y desarrollador del proyecto</p>
+      <p>Dr. Germán Velásquez Gutiérrez · Médico Veterinario Internista</p>
+      <p style="margin-top:12px;color:rgba(255,255,255,0.3);font-size:8.5pt;">Medellín, Colombia · 2026</p>
+    </div>
+    <div class="sig-right">
+      <p style="font-size:32pt;margin-bottom:8px;">🐾</p>
+      <p>Documentación Técnica v1.1</p>
+      <p>HTML5 · CSS3 · ES Modules</p>
+      <p>Actualizada: 2 de Abril, 2026</p>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+</body>
+</html>
