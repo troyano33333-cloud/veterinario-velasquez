@@ -1722,7 +1722,7 @@
 .footer {
   background:
     linear-gradient(rgba(10,18,40,0.84), rgba(10,18,40,0.84)),
-    url('../assets/images/footer.jpg') center/cover no-repeat;
+    url('../assets/images/footer.webp') center/cover no-repeat;
   color: white;
   padding: 36px 0 0;
   position: relative;
