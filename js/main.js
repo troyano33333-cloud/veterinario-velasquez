@@ -15,10 +15,10 @@ import { initModal }        from './modal.js';
 import { initContactForm }  from './form.js';
 import { initCounters }     from './counters.js';
 import { initCaseModal }    from './caseModal.js';
-import { patchWaLinks }     from './config.js';
+import { patchLinks }       from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  patchWaLinks();  // Sincroniza todos los links wa.me del HTML con config.js
+  patchLinks();  // Sincroniza todos los links del HTML con config.js
   initPaws();
   initNavbar();
   initReveal();

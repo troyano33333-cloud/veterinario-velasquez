@@ -2,7 +2,7 @@
  * form.js — Formulario de contacto → WhatsApp
  * Al hacer submit construye un mensaje y abre WhatsApp directamente.
  */
-import { waUrl } from './config.js';
+import { waUrl, DOCTOR_NAME } from './config.js';
 
 export function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -23,7 +23,7 @@ export function initContactForm() {
     }
 
     const lines = [
-      '¡Hola Dr. Germán! 🐾 Me contacto desde tu página web.',
+      `¡Hola ${DOCTOR_NAME}! 🐾 Me contacto desde tu página web.`,
       `*Nombre:* ${name}`,
       `*Mascota:* ${pet}`,
       `*Servicio:* ${service}`,
