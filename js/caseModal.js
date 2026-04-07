@@ -52,7 +52,7 @@ const CASOS = {
   },
 };
 
-const WA_NUMBER = '573104668704';
+const WA_NUMBER = '573002104847';
 
 export function initCaseModal() {
   const overlay   = document.getElementById('caseModalOverlay');

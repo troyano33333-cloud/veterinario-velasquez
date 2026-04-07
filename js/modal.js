@@ -125,7 +125,7 @@ function openModal(id) {
   lista.innerHTML = s.puntos.map(p => `<li>${p}</li>`).join('');
 
   const waText = `Hola Dr. Germán! Me interesa el servicio de ${s.titulo}. ¿Podemos coordinar una visita?`;
-  document.getElementById('modalWa').href = `https://wa.me/573104668704?text=${encodeURIComponent(waText)}`;
+  document.getElementById('modalWa').href = `https://wa.me/573002104847?text=${encodeURIComponent(waText)}`;
 
   const header = document.getElementById('modalHeader');
   header.style.background = `linear-gradient(135deg, ${s.color}, ${s.color}cc)`;

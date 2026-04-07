@@ -5,11 +5,6 @@
 
 export function initReveal() {
   // Asignar clases de reveal con delays escalonados
-  document.querySelectorAll('.service-card').forEach((el, i) => {
-    el.classList.add('reveal');
-    el.style.transitionDelay = `${i * 0.07}s`;
-  });
-
   document.querySelectorAll('.case-card').forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${i * 0.08}s`;

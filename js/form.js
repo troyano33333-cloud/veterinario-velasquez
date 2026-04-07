@@ -30,7 +30,7 @@ export function initContactForm() {
       `*Tipo de atención:* ${urgencia}`,
     ];
 
-    const waURL = `https://wa.me/573104668704?text=${encodeURIComponent(lines.join('\n'))}`;
+    const waURL = `https://wa.me/573002104847?text=${encodeURIComponent(lines.join('\n'))}`;
     window.open(waURL, '_blank', 'noopener,noreferrer');
   });
 }

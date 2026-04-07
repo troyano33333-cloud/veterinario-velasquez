@@ -17,17 +17,9 @@ export function initSlider() {
   let current   = 0;
   let autoTimer = null;
 
-  function getVisible() {
-    return 1;
-  }
-
-  function totalSlides() {
-    return cards.length;
-  }
-
   function buildDots() {
     dotsEl.innerHTML = '';
-    for (let i = 0; i < totalSlides(); i++) {
+    for (let i = 0; i < cards.length; i++) {
       const dot = document.createElement('span');
       dot.className = 'dot' + (i === current ? ' active' : '');
       dot.addEventListener('click', () => goTo(i));
@@ -36,7 +28,7 @@ export function initSlider() {
   }
 
   function goTo(index) {
-    const max  = totalSlides() - 1;
+    const max  = cards.length - 1;
     current    = Math.max(0, Math.min(index, max));
     const cardW = cards[0].offsetWidth;
     track.style.transform = `translateX(-${current * cardW}px)`;
@@ -45,7 +37,7 @@ export function initSlider() {
 
   function autoplay() {
     autoTimer = setInterval(() => {
-      current = (current + 1) >= totalSlides() ? 0 : current + 1;
+      current = (current + 1) >= cards.length ? 0 : current + 1;
       goTo(current);
     }, 4000);
   }
