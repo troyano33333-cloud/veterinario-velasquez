@@ -5,18 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Germán Velásquez | Médico Internista Veterinario - Medellín</title>
   <link rel="icon" type="image/png" href="assets/images/VETERINARIOO.webp" />
-  <link rel="preload" as="image" href="assets/images/fondo_principal.webp" type="image/webp" />
+
+  <!-- Preconnect para recursos externos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- Preload imágenes críticas del hero -->
+  <link rel="preload" as="image" href="assets/images/fondo_principal.webp" type="image/webp" fetchpriority="high" />
   <link rel="preload" as="image" href="assets/images/veterinario.webp" type="image/webp" />
+
+  <!-- CSS local (crítico) -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/responsive.css" />
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Google Fonts — no-render-blocking -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" /></noscript>
+
+  <!-- Font Awesome — carga asíncrona (no render-blocking) -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
+
+  <!-- Leaflet CSS — solo cuando el mapa sea visible (cargado por JS) -->
+  
 </head>
 <body>
 
@@ -36,7 +50,7 @@
         <div class="logo-icon">
           <picture>
             <source srcset="assets/images/veterinario.webp" type="image/webp">
-            <img src="assets/images/veterinario.webp" alt="Dr. Velásquez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+            <img src="assets/images/veterinario.webp" alt="Dr. Velásquez" width="48" height="48" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" fetchpriority="high">
           </picture>
         </div>
         <div class="logo-text">
@@ -66,7 +80,7 @@
     <div class="hero-bg-shapes">
       <picture>
         <source srcset="assets/images/fondo_principal.webp" type="image/webp">
-        <img class="jungle-bg-img" src="assets/images/fondo_principal.webp" alt="" aria-hidden="true" />
+        <img class="jungle-bg-img" src="assets/images/fondo_principal.webp" alt="" aria-hidden="true" width="1440" height="700" fetchpriority="high" loading="eager" />
       </picture>
       <svg class="jungle-bg-svg" style="display:none" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -341,7 +355,7 @@
           <div class="about-img-frame">
             <picture>
               <source srcset="assets/images/VETERINARIOO.webp" type="image/webp">
-              <img src="assets/images/VETERINARIOO.webp" alt="Dr. Germán Velásquez Gutiérrez - Médico Internista Veterinario" loading="lazy" />
+              <img src="assets/images/VETERINARIOO.webp" alt="Dr. Germán Velásquez Gutiérrez - Médico Internista Veterinario" width="400" height="500" loading="lazy" />
             </picture>
           </div>
           <!-- Animales decorativos -->
@@ -590,7 +604,7 @@
           <div class="case-top">
             <picture>
               <source srcset="assets/images/casos/cooper.webp" type="image/webp">
-              <img class="case-img" src="assets/images/casos/cooper.webp" alt="Cooper" loading="lazy">
+              <img class="case-img" src="assets/images/casos/cooper.webp" alt="Cooper" width="400" height="300" loading="lazy">
             </picture>
             <div class="case-badge">Urgencias · Cardiología</div>
           </div>
@@ -607,7 +621,7 @@
           <div class="case-top">
             <picture>
               <source srcset="assets/images/casos/tokio.webp" type="image/webp">
-              <img class="case-img" src="assets/images/casos/tokio.webp" alt="Tokio" loading="lazy">
+              <img class="case-img" src="assets/images/casos/tokio.webp" alt="Tokio" width="400" height="300" loading="lazy">
             </picture>
             <div class="case-badge">Oftalmología</div>
           </div>
@@ -624,7 +638,7 @@
           <div class="case-top">
             <picture>
               <source srcset="assets/images/casos/mia.webp" type="image/webp">
-              <img class="case-img" src="assets/images/casos/mia.webp" alt="Mia" loading="lazy">
+              <img class="case-img" src="assets/images/casos/mia.webp" alt="Mia" width="400" height="300" loading="lazy">
             </picture>
             <div class="case-badge">Oncología</div>
           </div>
@@ -867,7 +881,7 @@
             <div class="logo-icon logo-icon--small">
               <picture>
                 <source srcset="assets/images/VETERINARIOO.webp" type="image/webp">
-                <img src="assets/images/VETERINARIOO.webp" alt="Dr. Velásquez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" loading="lazy">
+                <img src="assets/images/VETERINARIOO.webp" alt="Dr. Velásquez" width="48" height="48" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" loading="lazy">
               </picture>
             </div>
             <div class="logo-text">
@@ -945,7 +959,6 @@
   </footer>
 
   <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script type="module" src="js/main.js"></script>
 
 </body>

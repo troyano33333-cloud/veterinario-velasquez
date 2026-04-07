@@ -1,10 +1,38 @@
 /**
  * map.js — Mapa Leaflet de Medellín
- * Muestra la ubicación y zona de cobertura del Dr. Germán Velásquez.
- * Requiere que Leaflet.js esté cargado globalmente antes de este módulo.
+ * Carga Leaflet de forma lazy solo cuando el mapa entra en viewport.
  */
 
+function loadLeaflet() {
+  return new Promise((resolve) => {
+    if (window.L) return resolve();
+    // CSS
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(css);
+    // JS
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = resolve;
+    document.head.appendChild(script);
+  });
+}
+
 export function initMap() {
+  const mapEl = document.getElementById('map');
+  if (!mapEl) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) return;
+    observer.disconnect();
+    loadLeaflet().then(setupMap);
+  }, { rootMargin: '200px' });
+
+  observer.observe(mapEl);
+}
+
+function setupMap() {
   try {
     const map = L.map('map', {
       zoomControl: true,
