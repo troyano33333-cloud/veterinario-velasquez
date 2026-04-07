@@ -11,3 +11,14 @@ export const WA_BASE_URL = `https://wa.me/${WA_NUMBER}`;
 export function waUrl(text) {
   return `${WA_BASE_URL}?text=${encodeURIComponent(text)}`;
 }
+
+/**
+ * Recorre todos los enlaces <a href="https://wa.me/..."> del HTML
+ * y reemplaza el número con WA_NUMBER.
+ * Así el HTML no necesita saber el número: solo lo define config.js.
+ */
+export function patchWaLinks() {
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(a => {
+    a.href = a.href.replace(/wa\.me\/\d+/, `wa.me/${WA_NUMBER}`);
+  });
+}

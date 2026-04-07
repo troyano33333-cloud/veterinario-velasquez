@@ -2,6 +2,7 @@
  * map.js — Mapa Leaflet de Medellín
  * Carga Leaflet de forma lazy solo cuando el mapa entra en viewport.
  */
+import { WA_BASE_URL, DOCTOR_NAME } from './config.js';
 
 function loadLeaflet() {
   return new Promise((resolve) => {
@@ -70,10 +71,10 @@ function setupMap() {
     const marker = L.marker([6.2442, -75.5812], { icon: pawIcon }).addTo(map);
     marker.bindPopup(`
       <div style="font-family:'Nunito',sans-serif; padding:4px 6px; min-width:180px;">
-        <strong style="font-size:1rem; color:#FF8C42;">🐾 Dr. Germán Velásquez</strong><br/>
+        <strong style="font-size:1rem; color:#FF8C42;">🐾 ${DOCTOR_NAME} Velásquez</strong><br/>
         <span style="font-size:0.85rem; color:#555;">Médico Internista Veterinario</span><br/>
         <span style="font-size:0.82rem; color:#888;">📍 Medellín, Colombia</span><br/>
-        <a href="https://wa.me/573002104847" target="_blank"
+        <a href="${WA_BASE_URL}" target="_blank"
           style="display:inline-block; margin-top:8px; background:#25D366; color:white;
                  padding:5px 12px; border-radius:20px; font-size:0.8rem; font-weight:700; text-decoration:none;">
           WhatsApp
