@@ -73,7 +73,7 @@ function setupMap() {
         <strong style="font-size:1rem; color:#FF8C42;">🐾 Dr. Germán Velásquez</strong><br/>
         <span style="font-size:0.85rem; color:#555;">Médico Internista Veterinario</span><br/>
         <span style="font-size:0.82rem; color:#888;">📍 Medellín, Colombia</span><br/>
-        <a href="https://wa.me/573104668704" target="_blank"
+        <a href="https://wa.me/573002104847" target="_blank"
           style="display:inline-block; margin-top:8px; background:#25D366; color:white;
                  padding:5px 12px; border-radius:20px; font-size:0.8rem; font-weight:700; text-decoration:none;">
           WhatsApp
